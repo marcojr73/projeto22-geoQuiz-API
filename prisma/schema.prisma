@@ -7,8 +7,9 @@ model users {
   name                  String
   email                 String
   picture               String
-  hits                  Int
-  mistakes              Int
+  password              String
+  hits                  Int                 @default(0)
+  mistakes              Int                 @default(0)
   createdAt             DateTime            @default(now())
   gameScore             gameScore[]
 }
@@ -17,7 +18,7 @@ model gameScore {
   id                    Int                 @id @default(autoincrement())
   userId                Int
   users                 users               @relation(fields: [userId], references: [id])
-  ponctuation           Int
+  ponctuation           Int                 @default(0)
   createdAt             DateTime            @default(now())
 }
 
