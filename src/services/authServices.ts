@@ -1,3 +1,8 @@
+import bcrypt from "bcrypt"
+import dotenv from "dotenv"
+import jwt from 'jsonwebtoken'
+
+
 import * as userRepository from "../repositories/userRepository.js"
 import { TcreateUser } from "../utils/typesUtils.js"
 
@@ -23,8 +28,24 @@ async function registerNewUser(data: TcreateUser){
     await userRepository.registerNewUser(data)
 }
 
+function verifyPasswordIsCorrect(password: string, passCrypt: string){
+    const ans = bcrypt.compareSync(password, passCrypt)
+    if(!ans) throw {
+        status: 422,
+        message: "this password is incorrect"
+    }
+}
+
+function generateToken(userId: number){
+    dotenv.config()
+    const {KEYJWT} = process.env
+    return jwt.sign({ userId }, KEYJWT, { expiresIn: '7d'})
+}
+
 export{
     isEmailAlreadyinUse,
     registerNewUser,
-    verifyAndGetIfUserExists
+    verifyAndGetIfUserExists,
+    verifyPasswordIsCorrect,
+    generateToken
 }
