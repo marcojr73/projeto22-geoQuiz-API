@@ -1,14 +1,9 @@
 import { NextFunction, Request, Response } from "express";
 import * as schemas from "../schemas/schemas.js"
+import { dataSignUp } from "../utils/typesUtils";
 
 async function validateDataSignUp(req: Request, res: Response, next: NextFunction){
-    type dataSignUp = {
-        name: string;
-        email: string;
-        password: string;
-        confirmPassword: string;
-        picture: string;
-    }
+    
     const {name, email, password, confirmPassword, picture}: dataSignUp = req.body
     
     if(password !== confirmPassword) throw {
