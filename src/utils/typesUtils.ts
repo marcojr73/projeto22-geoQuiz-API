@@ -5,7 +5,7 @@ type TcreateUser = {
     picture: string;
 }
 
-type dataSignUp = {
+type TdataSignUp = {
     name: string;
     email: string;
     password: string;
@@ -13,7 +13,13 @@ type dataSignUp = {
     picture: string;
 }
 
+type TdataSignIn = {
+    email: string;
+    password: string;
+}
+
 export {
-    dataSignUp,
-    TcreateUser
+    TdataSignUp,
+    TcreateUser,
+    TdataSignIn
 }

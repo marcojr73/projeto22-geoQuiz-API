@@ -10,7 +10,13 @@ const schemaSignUp = joi.object({
     picture: joi.string().pattern(pictureRegex).required()
 })
 
+const schemaSignIn = joi.object({
+    email: joi.string().email().pattern(emailRegex).required(),
+    password: joi.string().min(4).required(),
+})
+
 export {
-    schemaSignUp
+    schemaSignUp,
+    schemaSignIn
 } 
     
