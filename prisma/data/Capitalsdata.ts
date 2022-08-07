@@ -1,4 +1,4 @@
-const Capitalsdata = [
+export const capitalsdata = [
 	{
 		country: "Afghanistan",
 		capital: "Kabul",
@@ -6,7 +6,7 @@ const Capitalsdata = [
 		cityThree: "Kandahār",
         cityFour: "Mazār-e Sharīf",
         cityFive: "Jalālābād",
-        levelQuizId: 3
+        levelId: 3
 	},
 	{
 		country: "Albania",
@@ -15,7 +15,7 @@ const Capitalsdata = [
 		cityThree: "Elbasan",
         cityFour: "Vlorë",
         cityFive: "Shkodër",
-        levelQuizId: 3
+        levelId: 3
 	},
 	{
 		country: "Algeria",
@@ -24,7 +24,7 @@ const Capitalsdata = [
 		cityThree: "Oran",
         cityFour: "Tébessa",
         cityFive: "Constantine",
-        levelQuizId: 3
+        levelId: 3
 	},
 	{
 		country: "American Samoa",
@@ -33,7 +33,7 @@ const Capitalsdata = [
 		cityThree: "Leone",
         cityFour: "Faleniu",
         cityFive: "Aūa",
-        levelQuizId: 3
+        levelId: 3
 	},
 	{
 		country: "Andorra",
@@ -42,7 +42,7 @@ const Capitalsdata = [
 		cityThree: "Encamp",
         cityFour: "Massana",
         cityFive: "Canillo",
-        levelQuizId: 3
+        levelId: 3
 	},
 	{
 		country: "Angola",
@@ -51,7 +51,7 @@ const Capitalsdata = [
 		cityThree: "Lobito",
         cityFour: "Benguela",
         cityFive: "Cuito",
-        levelQuizId: 3
+        levelId: 3
 	},
 	{
 		country: "Anguilla",
@@ -60,7 +60,7 @@ const Capitalsdata = [
 		cityThree: "Sandy Ground Village",
         cityFour: "George Hill",
         cityFive: "Ålesund",
-        levelQuizId: 3
+        levelId: 3
 	},
 	{
 		country: "Argentina",
@@ -69,7 +69,7 @@ const Capitalsdata = [
 		cityThree: "Rosario",
         cityFour: "Mendoza",
         cityFive: "La Plata",
-        levelQuizId: 1
+        levelId: 1
 	},
 	{
 		country: "Armenia",
@@ -78,7 +78,7 @@ const Capitalsdata = [
 		cityThree: "Vanadzor",
         cityFour: "Vagharshapat",
         cityFive: "Hrazdan",
-        levelQuizId: 3
+        levelId: 3
 	},
 	{
 		country: "Australia",
@@ -87,7 +87,7 @@ const Capitalsdata = [
 		cityThree: "Melbourne",
         cityFour: "Brisbane",
         cityFive: "Gold Coast",
-        levelQuizId: 1
+        levelId: 1
 	},
 	{
 		country: "Austria",
@@ -96,7 +96,7 @@ const Capitalsdata = [
 		cityThree: "Linz",
         cityFour: "Favoriten",
         cityFive: "Donaustadt",
-        levelQuizId: 2
+        levelId: 2
 	},
 	{
 		country: "Azerbaijan",
@@ -105,7 +105,7 @@ const Capitalsdata = [
 		cityThree: "Sumqayt",
         cityFour: "Lankaran",
         cityFive: "Mingelchaur",
-        levelQuizId: 2
+        levelId: 2
 	},
 	{
 		country: "Bahamas",
@@ -114,7 +114,7 @@ const Capitalsdata = [
 		cityThree: "Freeport",
         cityFour: "San Andros",
         cityFive: "George Town",
-        levelQuizId: 3
+        levelId: 3
 	},
 	{
 		country: "Bahrain",
@@ -123,7 +123,7 @@ const Capitalsdata = [
 		cityThree: "Dār Kulayb",
         cityFour: "Madīnat Īsá",
         cityFive: "Sitrah",
-        levelQuizId: 3
+        levelId: 3
 	},
 	{
 		country: "Bangladesh",
@@ -132,7 +132,7 @@ const Capitalsdata = [
 		cityThree: "Rājshāhi",
         cityFour: "Shibganj",
         cityFive: "Natore",
-        levelQuizId: 3
+        levelId: 3
 	},
 	{
 		country: "Barbados",
@@ -141,7 +141,7 @@ const Capitalsdata = [
 		cityThree: "Oistins",
         cityFour: "Holetown",
         cityFive: "Crane",
-        levelQuizId: 3
+        levelId: 3
 	},
 	{
 		country: "Belarus",
@@ -150,7 +150,7 @@ const Capitalsdata = [
 		cityThree: "Vitebsk",
         cityFour: "Hrodna",
         cityFive: "Brest",
-        levelQuizId: 2
+        levelId: 2
 	},
 	{
 		country: "Belgium",
@@ -159,7 +159,7 @@ const Capitalsdata = [
 		cityThree: "Gent",
         cityFour: "Charleroi",
         cityFive: "Liège",
-        levelQuizId: 1
+        levelId: 1
 	},
 	{
 		country: "Belize",
@@ -168,7 +168,7 @@ const Capitalsdata = [
 		cityThree: "Belize City",
         cityFour: "San Pedro",
         cityFive: "Corozal",
-        levelQuizId: 3
+        levelId: 3
 	},
 	{
 		country: "Benin",
@@ -177,7 +177,7 @@ const Capitalsdata = [
 		cityThree: "Benin City",
         cityFour: "Djougou",
         cityFive: "Bohicon",
-        levelQuizId: 3
+        levelId: 3
 	},
 	{
 		country: "Bhutan",
@@ -186,7 +186,7 @@ const Capitalsdata = [
 		cityThree: "Phuntsholing",
         cityFour: "Pemagatshel",
         cityFive: "Sarpang",
-        levelQuizId: 3
+        levelId: 3
 	},
 	{
 		country: "Bolivia",
@@ -195,7 +195,7 @@ const Capitalsdata = [
 		cityThree: "La Paz",
         cityFour: "Oruro",
         cityFive: "Sacaba",
-        levelQuizId: 1
+        levelId: 1
 	},
 	{
 		country: "Bosnia and Herzegovina",
@@ -204,7 +204,7 @@ const Capitalsdata = [
 		cityThree: "BIH",
         cityFour: "Zenica",
         cityFive: "Mostar",
-        levelQuizId: 3
+        levelId: 3
 	},
 	{
 		country: "Botswana",
@@ -213,7 +213,7 @@ const Capitalsdata = [
 		cityThree: "Molepolole",
         cityFour: "Maun",
         cityFive: "Serowe",
-        levelQuizId: 3
+        levelId: 3
 	},
 	{
 		country: "Brazil",
@@ -222,7 +222,7 @@ const Capitalsdata = [
 		cityThree: "Rio de Janeiro",
         cityFour: "Belo Horizonte",
         cityFive: "Mercês",
-        levelQuizId: 1
+        levelId: 1
 	},
 	{
 		country: "Brunei",
@@ -231,7 +231,7 @@ const Capitalsdata = [
 		cityThree: "Tutong",
         cityFour: "Kapok",
         cityFive: "Mentiri",
-        levelQuizId: 3
+        levelId: 3
 	},
 	{
 		country: "Bulgaria",
@@ -240,7 +240,7 @@ const Capitalsdata = [
 		cityThree: "Burgas",
         cityFour: "Varna",
         cityFive: "Ruse",
-        levelQuizId: 2
+        levelId: 2
 	},
 	{
 		country: "Cambodia",
@@ -249,7 +249,7 @@ const Capitalsdata = [
 		cityThree: "Sihanoukville",
         cityFour: "Battambang",
         cityFive: "Paoy Paet",
-        levelQuizId: 3
+        levelId: 3
 	},
 	{
 		country: "Cameroon",
@@ -258,7 +258,7 @@ const Capitalsdata = [
 		cityThree: "Garoua",
         cityFour: "Kousséri",
         cityFive: "Maroua",
-        levelQuizId: 3
+        levelId: 3
 	},
 	{
 		country: "Canada",
@@ -267,7 +267,7 @@ const Capitalsdata = [
 		cityThree: "Montréal",
         cityFour: "Mississauga",
         cityFive: "Calgary",
-        levelQuizId: 1
+        levelId: 1
 	},
 	{
 		country: "Cayman Islands",
@@ -276,7 +276,7 @@ const Capitalsdata = [
 		cityThree: "Bodden Town",
         cityFour: "East End",
         cityFive: "North Side",
-        levelQuizId: 3
+        levelId: 3
 	},
 	{
 		country: "Central African Republic",
@@ -285,7 +285,7 @@ const Capitalsdata = [
 		cityThree: "Mbaïki",
         cityFour: "Berbérati",
         cityFive: "Bandoro",
-        levelQuizId: 3
+        levelId: 3
 	},
 	{
 		country: "Chile",
@@ -294,7 +294,7 @@ const Capitalsdata = [
 		cityThree: "Antofagasta",
         cityFour: "Viña del Mar",
         cityFive: "Valparaíso",
-        levelQuizId: 1
+        levelId: 1
 	},
 	{
 		country: "China",
@@ -303,7 +303,7 @@ const Capitalsdata = [
 		cityThree: "Shenzhen",
         cityFour: "Wuhan",
         cityFive: "Tianjin",
-        levelQuizId: 1
+        levelId: 1
 	},
 	{
 		country: "Colombia",
@@ -312,7 +312,7 @@ const Capitalsdata = [
 		cityThree: "Medellín",
         cityFour: "Barranquilla",
         cityFive: "Cúcuta",
-        levelQuizId: 1
+        levelId: 1
 	},
 	{
 		country: "Comoros",
@@ -321,7 +321,7 @@ const Capitalsdata = [
 		cityThree: "Fomboni",
         cityFour: "Tsimbeo",
         cityFive: "Sima",
-        levelQuizId: 3
+        levelId: 3
 	},
 	{
 		country: "Congo",
@@ -330,7 +330,7 @@ const Capitalsdata = [
 		cityThree: "Kinshasa",
         cityFour: "Pointe-Noire",
         cityFive: "Kisangani",
-        levelQuizId: 3
+        levelId: 3
 	},
 	{
 		country: "Costa Rica",
@@ -339,7 +339,7 @@ const Capitalsdata = [
 		cityThree: "San Francisco",
         cityFour: "Alajuela",
         cityFive: "Liberia",
-        levelQuizId: 2
+        levelId: 2
 	},
 	{
 		country: "Croatia",
@@ -348,7 +348,7 @@ const Capitalsdata = [
 		cityThree: "Rijeka",
         cityFour: "Osijek",
         cityFive: "Zadar",
-        levelQuizId: 2
+        levelId: 2
 	},
 	{
 		country: "Cuba",
@@ -357,7 +357,7 @@ const Capitalsdata = [
 		cityThree: "Camagüey",
         cityFour: "Holguín",
         cityFive: "Santa Clara",
-        levelQuizId: 3
+        levelId: 3
 	},
 	{
 		country: "Cyprus",
@@ -366,7 +366,7 @@ const Capitalsdata = [
 		cityThree: "Larnaca",
         cityFour: "Paphos",
         cityFive: "Famagusta",
-        levelQuizId: 3
+        levelId: 3
 	},
 	{
 		country: "Czech Republic",
@@ -375,7 +375,7 @@ const Capitalsdata = [
 		cityThree: "Ostrava",
         cityFour: "Pilsen",
         cityFive: "Olomouc",
-        levelQuizId: 3
+        levelId: 3
 	},
 	{
 		country: "Democratic Republic of the Congo",
@@ -384,7 +384,7 @@ const Capitalsdata = [
 		cityThree: "Mbuji-Mayi",
         cityFour: "Kisangani",
         cityFive: "Brazzaville",
-        levelQuizId: 3
+        levelId: 3
 	},
 	{
 		country: "Denmark",
@@ -393,7 +393,7 @@ const Capitalsdata = [
 		cityThree: "Odense",
         cityFour: "Aalborg",
         cityFive: "Esbjerg",
-        levelQuizId: 1
+        levelId: 1
 	},
 	{
 		country: "Dominican Republic",
@@ -402,7 +402,7 @@ const Capitalsdata = [
 		cityThree: "San Pedro de Macorís",
         cityFour: "La Romana",
         cityFive: "Bella Vista",
-        levelQuizId: 3
+        levelId: 3
 	},
 	{
 		country: "Ecuador",
@@ -411,7 +411,7 @@ const Capitalsdata = [
 		cityThree: "Portoviejo",
         cityFour: "Machala",
         cityFive: "Manta",
-        levelQuizId: 1
+        levelId: 1
 	},
 	{
 		country: "Egypt",
@@ -420,7 +420,7 @@ const Capitalsdata = [
 		cityThree: "Giza",
         cityFour: "Suez",
         cityFive: "Manşūrah",
-        levelQuizId: 1
+        levelId: 1
 	},
 	{
 		country: "El Salvador",
@@ -429,7 +429,7 @@ const Capitalsdata = [
 		cityThree: "Mejicanos",
         cityFour: "San Miguel",
         cityFive: "Santa Tecla",
-        levelQuizId: 2
+        levelId: 2
 	},
 	{
 		country: "Estonia",
@@ -438,7 +438,7 @@ const Capitalsdata = [
 		cityThree: "Pärnu",
         cityFour: "Viljandi",
         cityFive: "Rakvere",
-        levelQuizId: 2
+        levelId: 2
 	},
 	{
 		country: "Ethiopia",
@@ -447,7 +447,7 @@ const Capitalsdata = [
 		cityThree: "Mek'ele",
         cityFour: "Gondar",
         cityFive: "Nazrēt",
-        levelQuizId: 2
+        levelId: 2
 	},
 	{
 		country: "Fiji",
@@ -456,7 +456,7 @@ const Capitalsdata = [
 		cityThree: "Tubou",
         cityFour: "Levuka",
         cityFive: "Labasa",
-        levelQuizId: 3
+        levelId: 3
 	},
 	{
 		country: "Finland",
@@ -465,7 +465,7 @@ const Capitalsdata = [
 		cityThree: "Oulu",
         cityFour: "Turku",
         cityFive: "Vantaa",
-        levelQuizId: 2
+        levelId: 2
 	},
 	{
 		country: "France",
@@ -474,7 +474,7 @@ const Capitalsdata = [
 		cityThree: "Lyon",
         cityFour: "Toulouse",
         cityFive: "Nantes",
-        levelQuizId: 1
+        levelId: 1
 	},
 	{
 		country: "Gabon",
@@ -483,7 +483,7 @@ const Capitalsdata = [
 		cityThree: "Franceville",
         cityFour: "Moanda",
         cityFive: "Oyem",
-        levelQuizId: 3
+        levelId: 3
 	},
 	{
 		country: "Gambia",
@@ -492,7 +492,7 @@ const Capitalsdata = [
 		cityThree: "Bakau",
         cityFour: "Brikama",
         cityFive: "Serekunda",
-        levelQuizId: 3
+        levelId: 3
 	},
 	{
 		country: "Georgia",
@@ -501,7 +501,7 @@ const Capitalsdata = [
 		cityThree: "Sokhumi",
         cityFour: "Athens",
         cityFive: "Batumi",
-        levelQuizId: 2
+        levelId: 2
 	},
 	{
 		country: "Germany",
@@ -510,7 +510,7 @@ const Capitalsdata = [
 		cityThree: "Munich",
         cityFour: "Hamburg",
         cityFive: "Köln",
-        levelQuizId: 1
+        levelId: 1
 	},
 	{
 		country: "Ghana",
@@ -519,7 +519,7 @@ const Capitalsdata = [
 		cityThree: "Atsiaman",
         cityFour: "Takoradi",
         cityFive: "Tamale",
-        levelQuizId: 2
+        levelId: 2
 	},
 	{
 		country: "Greece",
@@ -528,7 +528,7 @@ const Capitalsdata = [
 		cityThree: "Piraeus",
         cityFour: "Pátra",
         cityFive: "Thessaloníki",
-        levelQuizId: 1
+        levelId: 1
 	},
 	{
 		country: "Greenland",
@@ -537,7 +537,7 @@ const Capitalsdata = [
 		cityThree: "Greenland",
         cityFour: "Ilulissat",
         cityFive: "Qaqortoq",
-        levelQuizId: 3
+        levelId: 3
 	},
 	{
 		country: "Guadeloupe",
@@ -546,7 +546,7 @@ const Capitalsdata = [
 		cityThree: "Petit-Bourg",
         cityFour: "Le Gosier",
         cityFive: "Baie-Mahault",
-        levelQuizId: 3
+        levelId: 3
 	},
 	{
 		country: "Guatemala",
@@ -555,7 +555,7 @@ const Capitalsdata = [
 		cityThree: "Petapa",
         cityFour: "Villa Nueva",
         cityFive: "Mixco",
-        levelQuizId: 3
+        levelId: 3
 	},
 	{
 		country: "Guernsey",
@@ -564,7 +564,7 @@ const Capitalsdata = [
 		cityThree: "St Martin",
         cityFour: "Saint Sampson",
         cityFive: "Castel",
-        levelQuizId: 3
+        levelId: 3
 	},
 	{
 		country: "Guyana",
@@ -573,7 +573,7 @@ const Capitalsdata = [
 		cityThree: "Anna Regina",
         cityFour: "New Amsterdam",
         cityFive: "Linden",
-        levelQuizId: 3
+        levelId: 3
 	},
 	{
 		country: "Haiti",
@@ -582,7 +582,7 @@ const Capitalsdata = [
 		cityThree: "Pétionville",
         cityFour: "Delmas 73",
         cityFive: "Pétionville",
-        levelQuizId: 3
+        levelId: 3
 	},
 	{
 		country: "Honduras",
@@ -591,7 +591,7 @@ const Capitalsdata = [
 		cityThree: "La Ceiba",
         cityFour: "El Progreso",
         cityFive: "Comayagua",
-        levelQuizId: 2
+        levelId: 2
 	},
 	{
 		country: "Hong Kong",
@@ -600,7 +600,7 @@ const Capitalsdata = [
 		cityThree: "Victoria",
         cityFour: "Sha Tin",
         cityFive: "Kwai Chung",
-        levelQuizId: 1
+        levelId: 1
 	},
 	{
 		country: "Hungary",
@@ -609,7 +609,7 @@ const Capitalsdata = [
 		cityThree: "Szeged",
         cityFour: "Miskolc",
         cityFive: "Debrecen",
-        levelQuizId: 3
+        levelId: 3
 	},
 	{
 		country: "India",
@@ -618,7 +618,7 @@ const Capitalsdata = [
 		cityThree: "Bengaluru",
         cityFour: "Hyderābād",
         cityFive: "Chennai",
-        levelQuizId: 1
+        levelId: 1
 	},
 	{
 		country: "Indonesia",
@@ -627,7 +627,7 @@ const Capitalsdata = [
 		cityThree: "Bandung",
         cityFour: "Medan",
         cityFive: "Surabaya",
-        levelQuizId: 2
+        levelId: 2
 	},
 	{
 		country: "Iran",
@@ -636,7 +636,7 @@ const Capitalsdata = [
 		cityThree: "Karaj",
         cityFour: "Isfahan",
         cityFive: "Mashhad",
-        levelQuizId: 2
+        levelId: 2
 	},
 	{
 		country: "Iraq",
@@ -645,7 +645,7 @@ const Capitalsdata = [
 		cityThree: "Al Mawşil al Jadīdah",
         cityFour: "Al Başrah al Qadīmah",
         cityFive: "Mosul",
-        levelQuizId: 2
+        levelId: 2
 	},
 	{
 		country: "Israel",
@@ -654,7 +654,7 @@ const Capitalsdata = [
 		cityThree: "Haifa",
         cityFour: "Ashdod",
         cityFive: "Netanya",
-        levelQuizId: 1
+        levelId: 1
 	},
 	{
 		country: "Italy",
@@ -663,7 +663,7 @@ const Capitalsdata = [
 		cityThree: "Naples",
         cityFour: "Turin",
         cityFive: "Palermo",
-        levelQuizId: 1
+        levelId: 1
 	},
 	{
 		country: "Jamaica",
@@ -672,7 +672,7 @@ const Capitalsdata = [
 		cityThree: "Spanish Town",
         cityFour: "New Kingston",
         cityFive: "Mandeville",
-        levelQuizId: 2
+        levelId: 2
 	},
 	{
 		country: "Japan",
@@ -681,7 +681,7 @@ const Capitalsdata = [
 		cityThree: "Nagoya",
         cityFour: "Osaka",
         cityFive: "Yokohama",
-        levelQuizId: 1
+        levelId: 1
 	},
 	{
 		country: "Jersey",
@@ -690,7 +690,7 @@ const Capitalsdata = [
 		cityThree: "Three Rivers",
         cityFour: "Somerset",
         cityFive: "Jerseyville",
-        levelQuizId: 3
+        levelId: 3
 	},
 	{
 		country: "Kenya",
@@ -699,7 +699,7 @@ const Capitalsdata = [
 		cityThree: "Kikuyu",
         cityFour: "Ruiru",
         cityFive: "Mombasa",
-        levelQuizId: 3
+        levelId: 3
 	},
 	{
 		country: "Lesotho",
@@ -708,7 +708,7 @@ const Capitalsdata = [
 		cityThree: "Maputsoe",
         cityFour: "Leribe",
         cityFive: "Mohale's Hoek",
-        levelQuizId: 3
+        levelId: 3
 	},
 	{
 		country: "Liberia",
@@ -717,7 +717,7 @@ const Capitalsdata = [
 		cityThree: "Harper",
         cityFour: "Bensonville",
         cityFive: "Kakata",
-        levelQuizId: 3
+        levelId: 3
 	},
 	{
 		country: "Libya",
@@ -726,7 +726,7 @@ const Capitalsdata = [
 		cityThree: "Mişrātah",
         cityFour: "Tarhuna",
         cityFive: "Al Khums",
-        levelQuizId: 3
+        levelId: 3
 	},
 	{
 		country: "Liechtenstein",
@@ -735,7 +735,7 @@ const Capitalsdata = [
 		cityThree: "Triesen",
         cityFour: "Balzers",
         cityFive: "Eschen",
-        levelQuizId: 3
+        levelId: 3
 	},
 	{
 		country: "Lithuania",
@@ -744,7 +744,7 @@ const Capitalsdata = [
 		cityThree: "Šiauliai",
         cityFour: "Klaipėda",
         cityFive: "Kaunas",
-        levelQuizId: 3
+        levelId: 3
 	},
 	{
 		country: "Luxembourg",
@@ -753,7 +753,7 @@ const Capitalsdata = [
 		cityThree: "Schifflange",
         cityFour: "Bettembourg",
         cityFive: "Pétange",
-        levelQuizId: 2
+        levelId: 2
 	},
 	{
 		country: "Macedonia",
@@ -762,7 +762,7 @@ const Capitalsdata = [
 		cityThree: "Prilep",
         cityFour: "Kumanovo",
         cityFive: "Bitola",
-        levelQuizId: 3
+        levelId: 3
 	},
 	{
 		country: "Madagascar",
@@ -771,7 +771,7 @@ const Capitalsdata = [
 		cityThree: "Fianarantsoa",
         cityFour: "Toamasina",
         cityFive: "Mahajanga",
-        levelQuizId: 3
+        levelId: 3
 	},
 	{
 		country: "Malaysia",
@@ -780,7 +780,7 @@ const Capitalsdata = [
 		cityThree: "Kampung Baru Subang",
         cityFour: "Klang",
         cityFive: "Kuala Lumpur",
-        levelQuizId: 3
+        levelId: 3
 	},
 	{
 		country: "Maldives",
@@ -789,7 +789,7 @@ const Capitalsdata = [
 		cityThree: "Kulhudhuffushi",
         cityFour: "Hithadhoo",
         cityFive: "Fuvahmulah",
-        levelQuizId: 3
+        levelId: 3
 	},
 	{
 		country: "Malta",
@@ -798,7 +798,7 @@ const Capitalsdata = [
 		cityThree: "MLT",
         cityFour: "Żabbar",
         cityFive: "Mosta",
-        levelQuizId: 3
+        levelId: 3
 	},
 	{
 		country: "Marshall Islands",
@@ -807,7 +807,7 @@ const Capitalsdata = [
 		cityThree: "Ebaye",
         cityFour: "Marshalltown",
         cityFive: "Post Falls",
-        levelQuizId: 3
+        levelId: 3
 	},
 	{
 		country: "Mauritania",
@@ -816,7 +816,7 @@ const Capitalsdata = [
 		cityThree: "Rosso",
         cityFour: "Kaédi",
         cityFive: "Néma",
-        levelQuizId: 3
+        levelId: 3
 	},
 	{
 		country: "Mauritius",
@@ -825,7 +825,7 @@ const Capitalsdata = [
 		cityThree: "Curepipe",
         cityFour: "Vacoas",
         cityFive: "Triolet",
-        levelQuizId: 3
+        levelId: 3
 	},
 	{
 		country: "Mexico",
@@ -834,7 +834,7 @@ const Capitalsdata = [
 		cityThree: "Tijuana",
         cityFour: "Puebla",
         cityFive: "Guadalajara",
-        levelQuizId: 1
+        levelId: 1
 	},
 	{
 		country: "Micronesia",
@@ -843,7 +843,7 @@ const Capitalsdata = [
 		cityThree: "FSM",
         cityFour: "",
         cityFive: "",
-        levelQuizId: 3
+        levelId: 3
 	},
 	{
 		country: "Moldova",
@@ -852,7 +852,7 @@ const Capitalsdata = [
 		cityThree: "Bender",
         cityFour: "Bălţi",
         cityFive: "Tiraspol",
-        levelQuizId: 3
+        levelId: 3
 	},
 	{
 		country: "Monaco",
@@ -861,7 +861,7 @@ const Capitalsdata = [
 		cityThree: "Monte-Carlo",
         cityFour: "Saint-Roman",
         cityFive: "Moneghetti",
-        levelQuizId: 2
+        levelId: 2
 	},
 	{
 		country: "Montenegro",
@@ -870,7 +870,7 @@ const Capitalsdata = [
 		cityThree: "Montenegro",
         cityFour: "Herceg Novi",
         cityFive: "Pljevlja",
-        levelQuizId: 3
+        levelId: 3
 	},
 	{
 		country: "Morocco",
@@ -879,7 +879,7 @@ const Capitalsdata = [
 		cityThree: "Fès",
         cityFour: "Sale",
         cityFive: "Casablanca",
-        levelQuizId: 3
+        levelId: 3
 	},
 	{
 		country: "Mozambique",
@@ -888,7 +888,7 @@ const Capitalsdata = [
 		cityThree: "Nampula",
         cityFour: "Beira",
         cityFive: "Matola",
-        levelQuizId: 2
+        levelId: 2
 	},
 	{
 		country: "Myanmar",
@@ -897,7 +897,7 @@ const Capitalsdata = [
 		cityThree: "Mawlamyine",
         cityFour: "Yangon",
         cityFive: "Mandalay",
-        levelQuizId: 3
+        levelId: 3
 	},
 	{
 		country: "Namibia",
@@ -906,7 +906,7 @@ const Capitalsdata = [
 		cityThree: "Oshakati",
         cityFour: "Walvis Bay",
         cityFive: "Rundu",
-        levelQuizId: 3
+        levelId: 3
 	},
 	{
 		country: "Nepal",
@@ -915,7 +915,7 @@ const Capitalsdata = [
 		cityThree: "Pātan",
         cityFour: "Pokhara",
         cityFive: "Naples",
-        levelQuizId: 3
+        levelId: 3
 	},
 	{
 		country: "Netherlands",
@@ -924,7 +924,7 @@ const Capitalsdata = [
 		cityThree: "Utrecht",
         cityFour: "the Hague",
         cityFive: "Rotterdam",
-        levelQuizId: 1
+        levelId: 1
 	},
 	{
 		country: "New Caledonia",
@@ -933,7 +933,7 @@ const Capitalsdata = [
 		cityThree: "Païta",
         cityFour: "Dumbéa",
         cityFive: "Mont-Dore",
-        levelQuizId: 3
+        levelId: 3
 	},
 	{
 		country: "New Zealand",
@@ -942,7 +942,7 @@ const Capitalsdata = [
 		cityThree: "Manukau City",
         cityFour: "Christchurch",
         cityFive: "Auckland",
-        levelQuizId: 2
+        levelId: 2
 	},
 	{
 		country: "Nicaragua",
@@ -951,7 +951,7 @@ const Capitalsdata = [
 		cityThree: "Chinandega",
         cityFour: "Masaya",
         cityFive: "León",
-        levelQuizId: 2
+        levelId: 2
 	},
 	{
 		country: "Nigeria",
@@ -960,7 +960,7 @@ const Capitalsdata = [
 		cityThree: "Port Harcourt",
         cityFour: "Ibadan",
         cityFive: "Lagos",
-        levelQuizId: 2
+        levelId: 2
 	},
 	{
 		country: "North Korea",
@@ -969,7 +969,7 @@ const Capitalsdata = [
 		cityThree: "Namp'o",
         cityFour: "Sunch'ŏn",
         cityFive: "Kaesŏng",
-        levelQuizId: 2
+        levelId: 2
 	},
 	{
 		country: "Norway",
@@ -978,7 +978,7 @@ const Capitalsdata = [
 		cityThree: "Trondheim",
         cityFour: "Stavanger",
         cityFive: "Drammen",
-        levelQuizId: 2
+        levelId: 2
 	},
 	{
 		country: "Oman",
@@ -987,7 +987,7 @@ const Capitalsdata = [
 		cityThree: "Bawshar",
         cityFour: "Şalālah",
         cityFive: "Seeb",
-        levelQuizId: 3
+        levelId: 3
 	},
 	{
 		country: "Pakistan",
@@ -996,7 +996,7 @@ const Capitalsdata = [
 		cityThree: "Karachi",
         cityFour: "Faisalabad",
         cityFive: "Lahore",
-        levelQuizId: 2
+        levelId: 2
 	},
 	{
 		country: "Panama",
@@ -1005,7 +1005,7 @@ const Capitalsdata = [
 		cityThree: "David",
         cityFour: "Juan Díaz",
         cityFive: "San Miguelito",
-        levelQuizId: 2
+        levelId: 2
 	},
 	{
 		country: "Papua New Guinea",
@@ -1014,7 +1014,7 @@ const Capitalsdata = [
 		cityThree: "Mount Hagen",
         cityFour: "Arawa",
         cityFive: "Lae",
-        levelQuizId: 3
+        levelId: 3
 	},
 	{
 		country: "Paraguay",
@@ -1023,7 +1023,7 @@ const Capitalsdata = [
 		cityThree: "Capiatá",
         cityFour: "San Lorenzo",
         cityFive: "Ciudad del Este",
-        levelQuizId: 1
+        levelId: 1
 	},
 	{
 		country: "Peru",
@@ -1032,7 +1032,7 @@ const Capitalsdata = [
 		cityThree: "Callao",
         cityFour: "Arequipa",
         cityFive: "Perm",
-        levelQuizId: 1
+        levelId: 1
 	},
 	{
 		country: "Philippines",
@@ -1041,7 +1041,7 @@ const Capitalsdata = [
 		cityThree: "Budta",
         cityFour: "Caloocan City",
         cityFive: "Manila",
-        levelQuizId: 2
+        levelId: 2
 	},
 	{
 		country: "Poland",
@@ -1050,7 +1050,7 @@ const Capitalsdata = [
 		cityThree: "Wrocław",
         cityFour: "Kraków",
         cityFive: "Wrocław",
-        levelQuizId: 3
+        levelId: 3
 	},
 	{
 		country: "Portugal",
@@ -1059,7 +1059,7 @@ const Capitalsdata = [
 		cityThree: "Braga",
         cityFour: "Amadora",
         cityFive: "Porto",
-        levelQuizId: 1
+        levelId: 1
 	},
 	{
 		country: "Puerto Rico",
@@ -1068,7 +1068,7 @@ const Capitalsdata = [
 		cityThree: "Ponce",
         cityFour: "Carolina",
         cityFive: "Bayamón",
-        levelQuizId: 2
+        levelId: 2
 	},
 	{
 		country: "Qatar",
@@ -1077,7 +1077,7 @@ const Capitalsdata = [
 		cityThree: "Al Khawr",
         cityFour: "Al Wakrah",
         cityFive: "Ar Rayyān",
-        levelQuizId: 1
+        levelId: 1
 	},
 	{
 		country: "Romania",
@@ -1086,7 +1086,7 @@ const Capitalsdata = [
 		cityThree: "Sector 2",
         cityFour: "Sector 6",
         cityFive: "Sector 3",
-        levelQuizId: 3
+        levelId: 3
 	},
 	{
 		country: "Russia",
@@ -1095,7 +1095,7 @@ const Capitalsdata = [
 		cityThree: "Novosibirsk",
         cityFour: "Yekaterinburg",
         cityFive: "Samara",
-        levelQuizId: 3
+        levelId: 3
 	},
 	{
 		country: "Rwanda",
@@ -1104,7 +1104,7 @@ const Capitalsdata = [
 		cityThree: "Gitarama",
         cityFour: "Butare",
         cityFive: "Gitarama",
-        levelQuizId: 3
+        levelId: 3
 	},
 	{
 		country: "Saint Helena",
@@ -1113,7 +1113,7 @@ const Capitalsdata = [
 		cityThree: "Georgetown",
         cityFour: "Jamestown",
         cityFive: "Saint Helena",
-        levelQuizId: 3
+        levelId: 3
 	},
 	{
 		country: "Saint Lucia",
@@ -1122,7 +1122,7 @@ const Capitalsdata = [
 		cityThree: "LCA",
         cityFour: "Micoud",
         cityFive: "Bisee",
-        levelQuizId: 3
+        levelId: 3
 	},
 	{
 		country: "Samoa",
@@ -1131,7 +1131,7 @@ const Capitalsdata = [
 		cityThree: "Asau",
         cityFour: "Leone",
         cityFive: "Pago Pago",
-        levelQuizId: 3
+        levelId: 3
 	},
 	{
 		country: "San Marino",
@@ -1140,7 +1140,7 @@ const Capitalsdata = [
 		cityThree: "Domagnano",
         cityFour: "Borgo Maggiore",
         cityFive: "Fiorentino",
-        levelQuizId: 3
+        levelId: 3
 	},
 	{
 		country: "Saudi Arabia",
@@ -1149,7 +1149,7 @@ const Capitalsdata = [
 		cityThree: "Medina",
         cityFour: "Mecca",
         cityFive: "Jeddah",
-        levelQuizId: 3
+        levelId: 3
 	},
 	{
 		country: "Senegal",
@@ -1158,7 +1158,7 @@ const Capitalsdata = [
 		cityThree: "Thiès",
         cityFour: "Touba",
         cityFive: "Pikine",
-        levelQuizId: 2
+        levelId: 2
 	},
 	{
 		country: "Serbia",
@@ -1167,7 +1167,7 @@ const Capitalsdata = [
 		cityThree: "Zemun",
         cityFour: "Novi Sad",
         cityFive: "Niš",
-        levelQuizId: 2
+        levelId: 2
 	},
 	{
 		country: "Sierra Leone",
@@ -1176,7 +1176,7 @@ const Capitalsdata = [
 		cityThree: "Koidu",
         cityFour: "Kenema",
         cityFive: "Bo",
-        levelQuizId: 3
+        levelId: 3
 	},
 	{
 		country: "Singapore",
@@ -1185,7 +1185,7 @@ const Capitalsdata = [
 		cityThree: "SGP",
         cityFour: "Woodlands",
         cityFive: "Žilina",
-        levelQuizId: 3
+        levelId: 3
 	},
 	{
 		country: "Slovakia",
@@ -1194,7 +1194,7 @@ const Capitalsdata = [
 		cityThree: "Nitra",
         cityFour: "Prešov",
         cityFive: "Košice",
-        levelQuizId: 3
+        levelId: 3
 	},
 	{
 		country: "Slovenia",
@@ -1203,7 +1203,7 @@ const Capitalsdata = [
 		cityThree: "Kranj",
         cityFour: "Celje",
         cityFive: "Maribor",
-        levelQuizId: 3
+        levelId: 3
 	},
 	{
 		country: "Somalia",
@@ -1212,7 +1212,7 @@ const Capitalsdata = [
 		cityThree: "Kismayo",
         cityFour: "Berbera",
         cityFive: "Hargeysa",
-        levelQuizId: 2
+        levelId: 2
 	},
 	{
 		country: "South Africa",
@@ -1221,7 +1221,7 @@ const Capitalsdata = [
 		cityThree: "Soweto",
         cityFour: "Johannesburg",
         cityFive: "Durban",
-        levelQuizId: 2
+        levelId: 2
 	},
 	{
 		country: "South Korea",
@@ -1230,7 +1230,7 @@ const Capitalsdata = [
 		cityThree: "Incheon",
         cityFour: "Daegu",
         cityFive: "Daejeon",
-        levelQuizId: 1
+        levelId: 1
 	},
 	{
 		country: "Spain",
@@ -1239,7 +1239,7 @@ const Capitalsdata = [
 		cityThree: "Sevilla",
         cityFour: "Valencia",
         cityFive: "Barcelona",
-        levelQuizId: 1
+        levelId: 1
 	},
 	{
 		country: "Sri Lanka",
@@ -1248,7 +1248,7 @@ const Capitalsdata = [
 		cityThree: "Jaffna",
         cityFour: "Maharagama",
         cityFive: "Dehiwala-Mount Lavinia",
-        levelQuizId: 3
+        levelId: 3
 	},
 	{
 		country: "Sudan",
@@ -1257,7 +1257,7 @@ const Capitalsdata = [
 		cityThree: "Port Sudan",
         cityFour: "Nyala",
         cityFive: "Omdurman",
-        levelQuizId: 3
+        levelId: 3
 	},
 	{
 		country: "Swaziland",
@@ -1266,7 +1266,7 @@ const Capitalsdata = [
 		cityThree: "Malkerns",
         cityFour: "Big Bend",
         cityFive: "Manzini",
-        levelQuizId: 3
+        levelId: 3
 	},
 	{
 		country: "Sweden",
@@ -1275,7 +1275,7 @@ const Capitalsdata = [
 		cityThree: "Uppsala",
         cityFour: "Malmö",
         cityFive: "Göteborg",
-        levelQuizId: 2
+        levelId: 2
 	},
 	{
 		country: "Switzerland",
@@ -1284,7 +1284,7 @@ const Capitalsdata = [
 		cityThree: "Lausanne",
         cityFour: "Basel",
         cityFive: "Genève",
-        levelQuizId: 2
+        levelId: 2
 	},
 	{
 		country: "Syria",
@@ -1293,7 +1293,7 @@ const Capitalsdata = [
 		cityThree: "Ḩamāh",
         cityFour: "Homs",
         cityFive: "Aleppo",
-        levelQuizId: 2
+        levelId: 2
 	},
 	{
 		country: "Taiwan",
@@ -1302,7 +1302,7 @@ const Capitalsdata = [
 		cityThree: "Tainan",
         cityFour: "Taichung",
         cityFive: "Kaohsiung",
-        levelQuizId: 2
+        levelId: 2
 	},
 	{
 		country: "Tanzania",
@@ -1311,7 +1311,7 @@ const Capitalsdata = [
 		cityThree: "Arusha",
         cityFour: "Zanzibar",
         cityFive: "Mwanza",
-        levelQuizId: 3
+        levelId: 3
 	},
 	{
 		country: "Thailand",
@@ -1320,7 +1320,7 @@ const Capitalsdata = [
 		cityThree: "Udon Thani",
         cityFour: "Mueang Nonthaburi",
         cityFive: "Samut Prakan",
-        levelQuizId: 3
+        levelId: 3
 	},
 	{
 		country: "Timor-Leste",
@@ -1329,7 +1329,7 @@ const Capitalsdata = [
 		cityThree: "Likisá",
         cityFour: "Suai",
         cityFive: "Maliana",
-        levelQuizId: 3
+        levelId: 3
 	},
 	{
 		country: "Tunisia",
@@ -1338,7 +1338,7 @@ const Capitalsdata = [
 		cityThree: "Kairouan",
         cityFour: "Sousse",
         cityFive: "Sfax",
-        levelQuizId: 3
+        levelId: 3
 	},
 	{
 		country: "Turkey",
@@ -1347,7 +1347,7 @@ const Capitalsdata = [
 		cityThree: "Bursa",
         cityFour: "İzmir",
         cityFive: "Istanbul",
-        levelQuizId: 2
+        levelId: 2
 	},
 	{
 		country: "Turkmenistan",
@@ -1356,7 +1356,7 @@ const Capitalsdata = [
 		cityThree: "Daşoguz",
         cityFour: "Mary",
         cityFive: "Balkanabat",
-        levelQuizId: 3
+        levelId: 3
 	},
 	{
 		country: "Tuvalu",
@@ -1365,7 +1365,7 @@ const Capitalsdata = [
 		cityThree: "Savave Village",
         cityFour: "Fakaifou Village",
         cityFive: "Alapi Village",
-        levelQuizId: 3
+        levelId: 3
 	},
 	{
 		country: "Uganda",
@@ -1374,7 +1374,7 @@ const Capitalsdata = [
 		cityThree: "Mbarara",
         cityFour: "Lira",
         cityFive: "Gulu",
-        levelQuizId: 3
+        levelId: 3
 	},
 	{
 		country: "Ukraine",
@@ -1383,7 +1383,7 @@ const Capitalsdata = [
 		cityThree: "Donetsk",
         cityFour: "Odessa",
         cityFive: "Dnipro",
-        levelQuizId: 2
+        levelId: 2
 	},
 	{
 		country: "United Arab Emirates",
@@ -1392,7 +1392,7 @@ const Capitalsdata = [
 		cityThree: "Ajman City",
         cityFour: "Abu Dhabi",
         cityFive: "Sharjah",
-        levelQuizId: 1
+        levelId: 1
 	},
 	{
 		country: "United Kingdom",
@@ -1401,7 +1401,7 @@ const Capitalsdata = [
 		cityThree: "Sheffield",
         cityFour: "Liverpool",
         cityFive: "Leicester",
-        levelQuizId: 1
+        levelId: 1
 	},
 	{
 		country: "United States",
@@ -1410,7 +1410,7 @@ const Capitalsdata = [
 		cityThree: "New York City",
         cityFour: "Chicago",
         cityFive: "Brooklyn",
-        levelQuizId: 1
+        levelId: 1
 	},
 	{
 		country: "Uruguay",
@@ -1419,7 +1419,7 @@ const Capitalsdata = [
 		cityThree: "Las Piedras",
         cityFour: "Paysandú",
         cityFive: "Salto",
-        levelQuizId: 1
+        levelId: 1
 	},
 	{
 		country: "Uzbekistan",
@@ -1428,7 +1428,7 @@ const Capitalsdata = [
 		cityThree: "Andijon",
         cityFour: "Samarkand",
         cityFive: "Namangan",
-        levelQuizId: 3
+        levelId: 3
 	},
 	{
 		country: "Venezuela",
@@ -1437,7 +1437,7 @@ const Capitalsdata = [
 		cityThree: "Valencia",
         cityFour: "Maracaibo",
         cityFive: "Maracay",
-        levelQuizId: 1
+        levelId: 1
 	},
 	{
 		country: "Vietnam",
@@ -1446,7 +1446,7 @@ const Capitalsdata = [
 		cityThree: "Haiphong",
         cityFour: "Da Nang",
         cityFive: "Ho Chi Minh City",
-        levelQuizId: 2
+        levelId: 2
 	},
 	{
 		country: "Yemen",
@@ -1455,7 +1455,7 @@ const Capitalsdata = [
 		cityThree: "Aden",
         cityFour: "Taiz",
         cityFive: "Al Ḩudaydah",
-        levelQuizId: 2
+        levelId: 2
 	},
 	{
 		country: "Zambia",
@@ -1464,7 +1464,7 @@ const Capitalsdata = [
 		cityThree: "Kabwe",
         cityFour: "Ndola",
         cityFive: "Kitwe",
-        levelQuizId: 3
+        levelId: 3
 	},
 	{
 		country: "Zimbabwe",
@@ -1473,6 +1473,6 @@ const Capitalsdata = [
 		cityThree: "Mutare",
         cityFour: "Chitungwiza",
         cityFive: "Bulawayo",
-        levelQuizId: 3
+        levelId: 3
 	}
 ]

@@ -3,77 +3,64 @@ generator client {
 }
 
 model users {
-  id                    Int                 @id @default(autoincrement())
-  name                  String
-  email                 String              @unique
-  picture               String
-  password              String
-  hits                  Int                 @default(0)
-  mistakes              Int                 @default(0)
-  createdAt             DateTime            @default(now())
-  gameScore             gameScore[]
+  id                        Int                 @id @default(autoincrement())
+  name                      String
+  email                     String              @unique
+  picture                   String
+  password                  String
+  hits                      Int                 @default(0)
+  mistakes                  Int                 @default(0)
+  createdAt                 DateTime            @default(now())
+  gameScore                 gameScore[]
 }
 
 model gameScore {
-  id                    Int                 @id @default(autoincrement())
-  userId                Int
-  users                 users               @relation(fields: [userId], references: [id])
-  ponctuation           Int                 @default(0)
-  createdAt             DateTime            @default(now())
+  id                        Int                 @id @default(autoincrement())
+  userId                    Int
+  users                     users               @relation(fields: [userId], references: [id])
+  ponctuation               Int                 @default(0)
+  createdAt                 DateTime            @default(now())
 }
 
 model capitalsQuiz {
-  id                        Int             @id @default(autoincrement())
+  id                        Int                 @id @default(autoincrement())
   country                   String
   capital                   String
   cityTwo                   String
   cityThree                 String
   cityFour                  String
   cityFive                  String
-  levelQuizId               Int
-  levelsQuizzes             levelsQuizzes   @relation(fields: [levelQuizId], references: [levelId])
-  createdAt                 DateTime        @default(now())
+  levelId                   Int
+  levels                    levels              @relation(fields: [levelId], references: [id])
+  createdAt                 DateTime            @default(now())
 }
 
 model territoriesQuiz {
-  id                        Int             @id @default(autoincrement())
+  id                        Int                 @id @default(autoincrement())
   territory                 String
   countryCorrect            String
   countryTwo                String
   countryThree              String
   countryFour               String
   countryFive               String
-  levelQuizId               Int
-  levelsQuizzes             levelsQuizzes   @relation(fields: [levelQuizId], references: [levelId])
-  createdAt                 DateTime        @default(now())
+  levelId                   Int
+  levels                    levels              @relation(fields: [levelId], references: [id])
+  createdAt                 DateTime            @default(now())
 }
 
 model flagsQuiz {
-  id                        Int             @id @default(autoincrement())
+  id                        Int                 @id @default(autoincrement())
+  country                   String
   flag                      String
-  countryCorrect            String
-  countryTwo                String
-  countryThree              String
-  countryFour               String
-  countryFive               String
-  levelQuizId               Int
-  levelsQuizzes             levelsQuizzes   @relation(fields: [levelQuizId], references: [levelId])
-  createdAt                 DateTime        @default(now())
+  levelId                   Int
+  levels                    levels              @relation(fields: [levelId], references: [id])
+  createdAt                 DateTime            @default(now())
 }
 
 model levels {
-  id                        Int             @id @default(autoincrement())
+  id                        Int                 @id @default(autoincrement())
   level                     String
-  createdAt                 DateTime        @default(now())
-  levelsQuizzes             levelsQuizzes[]
-}
-
-model levelsQuizzes {
-  id                        Int             @id @default(autoincrement())
-  quizId                    Int             @unique
-  levelId                   Int             @unique
-  levels                    levels          @relation(fields: [levelId], references: [id])
-  createdAt                 DateTime        @default(now())
+  createdAt                 DateTime            @default(now())
   capitalsQuiz              capitalsQuiz[]
   territoriesQuiz           territoriesQuiz[]
   flagsQuiz                 flagsQuiz[]
