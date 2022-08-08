@@ -1383,7 +1383,7 @@ export const capitalsdata = [
 		cityThree: "Donetsk",
         cityFour: "Odessa",
         cityFive: "Dnipro",
-        levelId: 2
+        levelId: 1
 	},
 	{
 		country: "United Arab Emirates",

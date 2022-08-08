@@ -8,7 +8,7 @@ async function encryptPassword(password: string){
 }
 
 async function validateTokenAndGetUser(token: string){
-    if (!token) throw {
+    if (token === undefined) throw {
         status: 401,
         message: "Token not sent"
     }
@@ -24,7 +24,15 @@ async function validateTokenAndGetUser(token: string){
     return userId
 }
 
+function suffleArray(quiz){
+    quiz.sort(() => { 
+        return Math.random() - 0.5; 
+    })
+    return quiz.slice(-10)
+}
+
 export {
     encryptPassword,
-    validateTokenAndGetUser
+    validateTokenAndGetUser,
+    suffleArray
 }

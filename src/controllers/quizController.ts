@@ -1,17 +1,18 @@
 import { Request, Response } from "express";
 import * as utils from "../utils/functionsUtils.js"
+import * as capitalsServices from "../services/capitalsServices.js"
 
-async function sendQuestionByLevel(req: Request, res: Response){
+async function sendCapitalsByLevel(req: Request, res: Response){
 
-    const {level} = req.params
+    const level = req.params.level
     const token: string = req.headers.authorization?.replace("Bearer", "").trim()
+    
+    await utils.validateTokenAndGetUser(token)
+    const quiz = await capitalsServices.getAndSuffleCapitals(level)
 
-    const userId = utils.validateTokenAndGetUser(token)
-
-
-    res.send(level)
+    res.send(quiz)
 }
 
 export {
-    sendQuestionByLevel
+    sendCapitalsByLevel
 }
