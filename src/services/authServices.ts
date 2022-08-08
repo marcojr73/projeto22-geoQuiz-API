@@ -17,6 +17,7 @@ async function isEmailAlreadyinUse(email: string){
 
 async function verifyAndGetIfUserExists(email: string){
     const user = await userRepository.findUserByEmail(email)
+    console.log(user, email)
     if(!user) throw {
         status: 404,
         message: "does not exist account register for this email"
