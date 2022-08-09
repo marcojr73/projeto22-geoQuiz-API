@@ -20,6 +20,13 @@ async function getAllcapitals(level: string){
     })
 }
 
+async function getQuizById(id: number){
+    return await prisma.capitalsQuiz.findFirst({
+        where: {id}
+    })
+}
+
 export {
-    getAllcapitals
+    getAllcapitals,
+    getQuizById
 }

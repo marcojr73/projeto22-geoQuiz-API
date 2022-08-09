@@ -16,8 +16,8 @@ async function validateLevelSent(req: Request, res: Response, next: NextFunction
 
 async function dataVerifyQuiz(req: Request, res: Response, next: NextFunction){
 
-    const {levelId, answer} = req.body
-    if(!levelId || !answer) throw {
+    const {quizId, answer} = req.body
+    if(!quizId || !answer) throw {
         status: 422,
         message: "you sent incorrect data"
     }
