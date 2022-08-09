@@ -40,8 +40,18 @@ function validateAnswer(quiz: capitalsQuiz, answer: string){
     }
 }
 
+async function updateHitsUser(userId: number){
+    await capitalsRepository.updateHitsByUser(userId)
+}
+
+async function updateMistakesUser(userId: number){
+    await capitalsRepository.updateMistakesByUser(userId)
+}
+
 export {
     getAndSuffleCapitals,
     verifyAndGetQuizById,
-    validateAnswer
+    validateAnswer,
+    updateHitsUser,
+    updateMistakesUser
 }
