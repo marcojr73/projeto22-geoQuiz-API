@@ -14,19 +14,18 @@ async function sendCapitalsByLevel(req: Request, res: Response){
 }
 
 async function verifyAnswerCapital(req: Request, res: Response){
-    const {quizId, answer} = req.body
+    const {quizId, answer}: {quizId: number, answer: string} = req.body
     const token: string = req.headers.authorization?.replace("Bearer", "").trim()
 
-    const userId = await utils.validateTokenAndGetUser(token)
+    const userId: number = await utils.validateTokenAndGetUser(token)
     const quiz = await capitalsServices.verifyAndGetQuizById(quizId)
 
-    const isCorrect = await capitalsServices.validateAnswer(quiz, answer)
+    const isCorrect = capitalsServices.validateAnswer(quiz, answer)
     if(isCorrect) await capitalsServices.updateHitsUser(userId)
     if(!isCorrect) await capitalsServices.updateMistakesUser(userId)
+    if(isCorrect) await capitalsServices.updateWeekScore(quiz, userId)
 
-
-
-    res.send(quiz)
+    res.send(isCorrect)
 }
 
 export {

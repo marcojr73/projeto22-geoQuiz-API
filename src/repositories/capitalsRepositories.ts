@@ -40,9 +40,19 @@ async function updateMistakesByUser(id){
     })
 }
 
+async function createGameScore(userId: number, ponctuation: number){
+    await prisma.gameScore.create({
+        data:{
+            userId,
+            ponctuation
+        }
+    })
+}
+
 export {
     getAllcapitals,
     getQuizById,
     updateHitsByUser,
-    updateMistakesByUser
+    updateMistakesByUser,
+    createGameScore
 }
