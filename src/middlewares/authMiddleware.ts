@@ -1,4 +1,4 @@
-import { NextFunction, Request, Response } from "express";
+import { NextFunction, Request, Response } from "express"
 import * as schemas from "../schemas/schemas.js"
 import { TdataSignIn, TdataSignUp } from "../utils/typesUtils"
 
