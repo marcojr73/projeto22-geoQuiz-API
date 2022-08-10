@@ -24,11 +24,11 @@ async function validateTokenAndGetUser(token: string){
     return userId
 }
 
-function suffleArray(quiz){
+function suffleArray(quiz, numberItems){
     quiz.sort(() => { 
         return Math.random() - 0.5; 
     })
-    return quiz.slice(-10)
+    return quiz.slice(-numberItems)
 }
 
 export {

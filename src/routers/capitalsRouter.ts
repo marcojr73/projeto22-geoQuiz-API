@@ -1,10 +1,10 @@
 import { Router } from "express";
-import { sendCapitalsByLevel, verifyAnswerCapital } from "../controllers/quizController.js";
+import { sendCapitalsByLevel, verifyAnswerCapital } from "../controllers/capitalsController.js";
 import { dataVerifyQuiz, validateLevelSent } from "../middlewares/QuizzesMiddleware.js";
 
 const capitalsRouter = Router()
 
 capitalsRouter.get("/capitals/:level", validateLevelSent, sendCapitalsByLevel)
-capitalsRouter.post("/capital/", dataVerifyQuiz, verifyAnswerCapital)
+capitalsRouter.post("/validate/capitals/", dataVerifyQuiz, verifyAnswerCapital)
 
 export default capitalsRouter

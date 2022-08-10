@@ -1,11 +1,11 @@
 export const levelsData = [
     {
-        level: "Fácil"
+        level: "easy"
     },
     {
-        level: "Médio"
+        level: "medium"
     },
     {
-        level: "Difícil"
+        level: "hard"
     }
 ]
