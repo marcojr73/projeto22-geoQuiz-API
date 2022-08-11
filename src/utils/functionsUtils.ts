@@ -1,6 +1,8 @@
 import bcrypt from "bcrypt"
 import dotenv from "dotenv"
 import jwt from "jsonwebtoken"
+import {capitalsQuiz} from "@prisma/client"
+import * as userRepository from "../repositories/userRepository.js"
 
 async function encryptPassword(password: string){
     dotenv.config()
@@ -31,8 +33,25 @@ function suffleArray(quiz, numberItems){
     return quiz.slice(-numberItems)
 }
 
+async function updateHitsUser(userId: number){
+    console.log(userId)
+    await userRepository.updateHitsByUser(userId)
+}
+
+async function updateMistakesUser(userId: number){
+    await userRepository.updateMistakesByUser(userId)
+}
+
+async function updateWeekScore(quiz, userId: number){
+    const ponctuation = quiz.levelId * 10
+    await userRepository.createGameScore(userId, ponctuation)
+}
+
 export {
     encryptPassword,
     validateTokenAndGetUser,
-    suffleArray
+    suffleArray,
+    updateHitsUser,
+    updateMistakesUser,
+    updateWeekScore
 }

@@ -40,24 +40,9 @@ function validateAnswer(quiz: capitalsQuiz, answer: string){
     }
 }
 
-async function updateHitsUser(userId: number){
-    await capitalsRepository.updateHitsByUser(userId)
-}
-
-async function updateMistakesUser(userId: number){
-    await capitalsRepository.updateMistakesByUser(userId)
-}
-
-async function updateWeekScore(quiz: capitalsQuiz, userId: number){
-    const ponctuation = quiz.levelId * 10
-    await capitalsRepository.createGameScore(userId, ponctuation)
-}
 
 export {
     getAndSuffleCapitals,
     verifyAndGetQuizById,
-    validateAnswer,
-    updateHitsUser,
-    updateMistakesUser,
-    updateWeekScore
+    validateAnswer
 }

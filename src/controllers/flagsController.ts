@@ -13,22 +13,22 @@ async function sendFlagsByLevel(req: Request, res: Response){
     res.send(quiz)
 }
 
-// async function verifyAnswerCapital(req: Request, res: Response){
-//     const {quizId, answer}: {quizId: number, answer: string} = req.body
-//     const token: string = req.headers.authorization?.replace("Bearer", "").trim()
+async function verifyAnswerFlags(req: Request, res: Response){
 
-//     const userId: number = await utils.validateTokenAndGetUser(token)
-//     const quiz = await capitalsServices.verifyAndGetQuizById(quizId)
+    const {quizId, answer}: {quizId: number, answer: string} = req.body
+    const token: string = req.headers.authorization?.replace("Bearer", "").trim()
 
-//     const isCorrect = capitalsServices.validateAnswer(quiz, answer)
-//     if(isCorrect) await capitalsServices.updateHitsUser(userId)
-//     if(!isCorrect) await capitalsServices.updateMistakesUser(userId)
-//     if(isCorrect) await capitalsServices.updateWeekScore(quiz, userId)
-
-//     res.send(isCorrect)
-// }
+    const userId: number = await utils.validateTokenAndGetUser(token)
+    const quiz = await flagsServices.verifyAndGetQuizById(quizId)
+    const isCorrect = await flagsServices.validateAnswer(quiz, answer)
+    if(isCorrect) await utils.updateHitsUser(userId)
+    if(!isCorrect) await utils.updateMistakesUser(userId)
+    if(isCorrect) await utils.updateWeekScore(quiz, userId)
+    
+    res.send(isCorrect)
+}
 
 export {
-    sendFlagsByLevel
-    // verifyAnswerCapital
+    sendFlagsByLevel,
+    verifyAnswerFlags
 }

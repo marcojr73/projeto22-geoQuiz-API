@@ -15,6 +15,13 @@ async function getAllFlags(level: string){
     })
 }
 
+async function getFlagById(id: number){
+    return await prisma.flagsQuiz.findFirst({
+        where:{id}
+    })
+}
+
 export {
-    getAllFlags
+    getAllFlags,
+    getFlagById
 }

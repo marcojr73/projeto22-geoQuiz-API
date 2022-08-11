@@ -22,11 +22,31 @@ function assembleObject(quiz){
             name: quiz[i].flag,
             options: [quiz[i].country, countries[0], countries[1], countries[2], countries[3]]
         })
+        utils.suffleArray(ans[i].options, 10)
     }
     return ans
 }
 
+async function verifyAndGetQuizById(id: number){
+    const quiz = await flagsRepository.getFlagById(id)
+    if(!quiz) throw {
+        status: 404,
+        message: "quiz not found"
+    }
+    return quiz
+}
+
+async function validateAnswer(quiz, answer){
+    if(quiz.country !== answer){
+        return false
+    } else {
+        return true
+    }
+}
+
 
 export {
-    getAndSuffleFlags
+    getAndSuffleFlags,
+    verifyAndGetQuizById,
+    validateAnswer
 }

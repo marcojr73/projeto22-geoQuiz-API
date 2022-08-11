@@ -21,9 +21,9 @@ async function verifyAnswerCapital(req: Request, res: Response){
     const quiz = await capitalsServices.verifyAndGetQuizById(quizId)
 
     const isCorrect = capitalsServices.validateAnswer(quiz, answer)
-    if(isCorrect) await capitalsServices.updateHitsUser(userId)
-    if(!isCorrect) await capitalsServices.updateMistakesUser(userId)
-    if(isCorrect) await capitalsServices.updateWeekScore(quiz, userId)
+    if(isCorrect) await utils.updateHitsUser(userId)
+    if(!isCorrect) await utils.updateMistakesUser(userId)
+    if(isCorrect) await utils.updateWeekScore(quiz, userId)
 
     res.send(isCorrect)
 }
