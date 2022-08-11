@@ -7,9 +7,8 @@ async function sendUserHistoric(req: Request, res: Response){
     const token: string = req.headers.authorization?.replace("Bearer", "").trim()
 
     const userId: number = await utils.validateTokenAndGetUser(token)
-    const data = await userService.getUserById(userId)
-
-
+    const data: any = await userService.getUserById(userId)
+    data.weekScore = await userService.calculateWeekScoreByUser(userId)
     res.send(data)
 }
 

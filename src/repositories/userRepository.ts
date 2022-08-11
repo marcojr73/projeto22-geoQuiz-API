@@ -48,6 +48,27 @@ async function createGameScore(userId: number, ponctuation: number){
     })
 }
 
+async function getHistoryGames(id: number, lastweekDay){
+    const game = await prisma.users.findMany({
+        select:{
+            gameScore:{
+                select:{
+                    id: true,
+                    userId: true,
+                    ponctuation: true,
+                    createdAt: true
+                },
+                where:{
+                    createdAt:{
+                        gte: lastweekDay
+                    }
+                }
+            }
+        },
+        where: {id}
+    })
+    return game[0].gameScore
+}
 
 export {
     findUserByEmail,
@@ -55,5 +76,6 @@ export {
     registerNewUser,
     updateHitsByUser,
     updateMistakesByUser,
-    createGameScore
+    createGameScore,
+    getHistoryGames
 }
