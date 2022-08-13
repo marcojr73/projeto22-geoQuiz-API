@@ -26,33 +26,8 @@ async function getQuizById(id: number){
     })
 }
 
-async function updateHitsByUser(id){
-    await prisma.users.update({
-        where:{id},
-        data:{hits:{increment: 1}}
-    })
-}
-
-async function updateMistakesByUser(id){
-    await prisma.users.update({
-        where:{id},
-        data:{mistakes:{increment: 1}}
-    })
-}
-
-async function createGameScore(userId: number, ponctuation: number){
-    await prisma.gameScore.create({
-        data:{
-            userId,
-            ponctuation
-        }
-    })
-}
 
 export {
     getAllcapitals,
-    getQuizById,
-    updateHitsByUser,
-    updateMistakesByUser,
-    createGameScore
+    getQuizById
 }
