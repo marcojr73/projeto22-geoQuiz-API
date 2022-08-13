@@ -3,6 +3,7 @@ import {prisma} from "../src/config/database.js";
 import { capitalsdata }  from "./data/Capitalsdata.js"
 import { levelsData } from "./data/levelsData.js";
 import { flagsData } from "./data/flagsData.js";
+import { territoriesData } from "./data/territoriesData.js";
 import dotenv from "dotenv"
 
 dotenv.config()
@@ -18,6 +19,9 @@ async function seed(){
     })
     await prisma.flagsQuiz.createMany({
         data: flagsData
+    })
+    await prisma.territoriesQuiz.createMany({
+        data: territoriesData
     })
 }seed().catch(e => {
     console.log(e)
