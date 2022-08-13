@@ -3,7 +3,6 @@ import { sendUserHistoric } from "../controllers/usersController.js";
 
 const usersRouter = Router()
 
-usersRouter.get("/user", sendUserHistoric)
-usersRouter.get("/users/ranking")
+usersRouter.get("/users/ranking", sendUserHistoric)
 
 export default usersRouter

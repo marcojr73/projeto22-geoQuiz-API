@@ -34,7 +34,6 @@ function suffleArray(quiz, numberItems){
 }
 
 async function updateHitsUser(userId: number){
-    console.log(userId)
     await userRepository.updateHitsByUser(userId)
 }
 

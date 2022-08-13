@@ -48,26 +48,22 @@ async function createGameScore(userId: number, ponctuation: number){
     })
 }
 
-async function getHistoryGames(id: number, lastweekDay){
-    const game = await prisma.users.findMany({
+async function getHistoryGames(){
+    return await prisma.$queryRaw`
+    SELECT SUM(ponctuation) as "weekScore", users.name as name FROM "gameScore"
+    JOIN users ON "gameScore"."userId" = users.id
+    WHERE "gameScore"."createdAt" > current_date - interval '1 days'
+    GROUP BY name
+    ORDER BY ("weekScore") DESC`
+}
+
+async function getUsersList(){
+    return prisma.users.findMany({
         select:{
-            gameScore:{
-                select:{
-                    id: true,
-                    userId: true,
-                    ponctuation: true,
-                    createdAt: true
-                },
-                where:{
-                    createdAt:{
-                        gte: lastweekDay
-                    }
-                }
-            }
-        },
-        where: {id}
+            id: true,
+            name: true
+        }
     })
-    return game[0].gameScore
 }
 
 export {
@@ -77,5 +73,6 @@ export {
     updateHitsByUser,
     updateMistakesByUser,
     createGameScore,
-    getHistoryGames
+    getHistoryGames,
+    getUsersList
 }

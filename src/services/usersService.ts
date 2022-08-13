@@ -11,19 +11,16 @@ async function getUserById(id: number){
 }
 
 async function calculateWeekScoreByUser(id: number){
-    const lastweekDay = dayjs().subtract(7, 'day').format()
-    const games = await usersRepository.getHistoryGames(id, lastweekDay)
-    return calculateScore(games)
+    const score = await usersRepository.getHistoryGames() as any
+    score.forEach(score => {
+        score.weekScore = toJson(score.weekScore)
+    })
+    return score
 }
 
-function calculateScore(games){
-    let score = 0
-
-    games.forEach(game => {
-        score += game.ponctuation
-    })
-
-    return score
+function toJson(weekScore) {
+    return  JSON.stringify(weekScore, (_, v) => typeof v === 'bigint' ? `${v}n` : v)
+            .replace(/"(-?\d+)n"/g, (_, a) => a)
 }
 
 export {
