@@ -37,12 +37,9 @@ model capitalsQuiz {
 
 model territoriesQuiz {
   id                        Int                 @id @default(autoincrement())
-  territory                 String
-  countryCorrect            String
-  countryTwo                String
-  countryThree              String
-  countryFour               String
-  countryFive               String
+  name                      String
+  country                   String
+  options                   String[]
   levelId                   Int
   levels                    levels              @relation(fields: [levelId], references: [id])
   createdAt                 DateTime            @default(now())
