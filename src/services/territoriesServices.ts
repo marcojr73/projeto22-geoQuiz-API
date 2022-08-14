@@ -17,9 +17,23 @@ async function assembleTerritories(territory){
 
 async function verifyAndGetQuizById(id: number){
     const quiz = await territoriesRepository.getQuizById(id)
+    if(!quiz) throw {
+        status: 404,
+        message: "Quiz not found"
+    }
+    return quiz
+}
+
+async function validateAnswer(quiz, answer){
+    if(quiz.country !== answer){
+        return false
+    } else {
+        return true
+    }
 }
 
 export {
     getAndSuffleTerritories,
-    verifyAndGetQuizById
+    verifyAndGetQuizById,
+    validateAnswer
 }

@@ -1,5 +1,4 @@
 import { Request, Response } from "express";
-import { getAllTerritories } from "../repositories/territoriesRepository.js";
 import * as utils from "../utils/functionsUtils.js"
 import * as territoriesServices from "../services/territoriesServices.js"
 
@@ -18,21 +17,17 @@ async function verifyAnswerTerritories(req: Request, res: Response){
     const {quizId, answer}: {quizId: number, answer: string} = req.body
     const token: string = req.headers.authorization?.replace("Bearer", "").trim()
     const userId: number = await utils.validateTokenAndGetUser(token)
-    const quiz = await territoriesServices.
-}
-
-async function verifyAnswerFlags(req: Request, res: Response){
-
-    const quiz = await flagsServices.verifyAndGetQuizById(quizId)
-    const isCorrect = await flagsServices.validateAnswer(quiz, answer)
+    const quiz = await territoriesServices.verifyAndGetQuizById(quizId)
+    const isCorrect = await territoriesServices.validateAnswer(quiz, answer)
     if(isCorrect) await utils.updateHitsUser(userId)
     if(!isCorrect) await utils.updateMistakesUser(userId)
     if(isCorrect) await utils.updateWeekScore(quiz, userId)
-    
+
     res.send(isCorrect)
 }
 
 export {
-    sendTerritoriesByLevel
+    sendTerritoriesByLevel,
+    verifyAnswerTerritories
 }
 
