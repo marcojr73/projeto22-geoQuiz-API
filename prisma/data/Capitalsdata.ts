@@ -1390,7 +1390,7 @@ export const capitalsdata = [
 		capital: "Abu Dhabi",
 		cityTwo: "Ras Al Khaimah City",
 		cityThree: "Ajman City",
-        cityFour: "Abu Dhabi",
+        cityFour: "Mbarara",
         cityFive: "Sharjah",
         levelId: 1
 	},
