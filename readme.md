@@ -40,6 +40,7 @@ Instale meu projeto e configure o .env como no exemplo
 - Express
 - ORM (prisma)
 - Autenticação por token JWT
+- Sendgrid (disparador de emails)
 
 ***
     
