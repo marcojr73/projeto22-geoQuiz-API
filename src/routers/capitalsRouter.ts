@@ -5,6 +5,6 @@ import { dataVerifyQuiz, validateLevelSent } from "../middlewares/QuizzesMiddlew
 const capitalsRouter = Router()
 
 capitalsRouter.get("/capitals/:level", validateLevelSent, sendCapitalsByLevel)
-capitalsRouter.post("/validate/capitals/", dataVerifyQuiz, verifyAnswerCapital)
+capitalsRouter.post("/validate/capitals", dataVerifyQuiz, verifyAnswerCapital)
 
 export default capitalsRouter

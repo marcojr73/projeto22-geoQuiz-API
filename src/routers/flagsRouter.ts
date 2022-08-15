@@ -5,6 +5,6 @@ import { dataVerifyQuiz, validateLevelSent } from "../middlewares/QuizzesMiddlew
 const FlagsRouter = Router()
 
 FlagsRouter.get("/flags/:level", validateLevelSent, sendFlagsByLevel)
-FlagsRouter.post("/validate/flags/", dataVerifyQuiz, verifyAnswerFlags)
+FlagsRouter.post("/validate/flags", dataVerifyQuiz, verifyAnswerFlags)
 
 export default FlagsRouter

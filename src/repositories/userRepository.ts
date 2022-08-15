@@ -25,14 +25,14 @@ async function registerNewUser(data: TcreateUser){
     })
 }
 
-async function updateHitsByUser(id){
+async function updateHitsByUser(id: number){
     await prisma.users.update({
         where:{id},
         data:{hits:{increment: 1}}
     })
 }
 
-async function updateMistakesByUser(id){
+async function updateMistakesByUser(id: number){
     await prisma.users.update({
         where:{id},
         data:{mistakes:{increment: 1}}

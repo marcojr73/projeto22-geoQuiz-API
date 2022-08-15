@@ -1,3 +1,4 @@
+import { flagsQuiz } from "@prisma/client"
 import * as flagsRepository from "../repositories/flagsRepository.js"
 import * as utils from "../utils/functionsUtils.js"
 
@@ -36,7 +37,7 @@ async function verifyAndGetQuizById(id: number){
     return quiz
 }
 
-async function validateAnswer(quiz, answer){
+async function validateAnswer(quiz: flagsQuiz, answer: string){
     if(quiz.country !== answer){
         return false
     } else {

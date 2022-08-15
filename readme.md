@@ -52,8 +52,11 @@ Instale meu projeto e configure o .env como no exemplo
 
 | sent by |Parameter | Type     |             
 | :-------- |:-------- | :------- | 
+| `body` |`name` | `string` |
 | `body` |`email` | `string` |
 | `body` |`password` | `string` |
+| `body` |`confirmPassword` | `string` |
+| `body` |`picture` | `string` |
 
 #### Sign-in
 
@@ -66,39 +69,91 @@ Instale meu projeto e configure o .env como no exemplo
 | `body` |`email` | `string` | 
 | `body` |`password` | `string` |
 
-#### Create test 
+#### get a list of capital quizzes
 
 ```
-  POST /tests/create
-```
-
-| sent by |Parameter | Type     |                 
-| :-------- |:-------- | :------- | 
-| `header` |`authorization` | `Bearer token` | 
-| `body` |`name` | `string` | 
-| `body` |`pdfUrl` | `string` |
-| `body` |`category*` | `string` | 
-| `body` |`discipline*` | `string` | 
-| `body` |`teacher*` | `string` | 
-
-category, teacher and discipline must be consistent with the bank's rules
-
-#### Views the tests by discipline
-
-```
-  GET /tests/disciplines
+  POST /capitals/:level
 ```
 
 | sent by |Parameter | Type     |                 
 | :-------- |:-------- | :------- | 
 | `header` |`authorization` | `Bearer token` | 
+| `params` |`level` | `string` |
 
-#### Views the tests by teacher
+level must be "easy", "medium", "hard"
+
+#### Validate an capital quiz answer
 
 ```
-  GET /tests/disciplines
+  POST /validate/capitals
 ```
 
 | sent by |Parameter | Type     |                 
 | :-------- |:-------- | :------- | 
-| `header` |`authorization` | `Bearer token` |
+| `header` |`authorization` | `Bearer token` | 
+| `body` |`quizId` | `number` | 
+| `body` |`answer` | `string` | 
+
+
+#### get a list of flags quizzes
+
+```
+  POST /flags/:level
+```
+
+| sent by |Parameter | Type     |                 
+| :-------- |:-------- | :------- | 
+| `header` |`authorization` | `Bearer token` | 
+| `params` |`level` | `string` |
+
+level must be "easy", "medium", "hard"
+
+#### Validate an capital quiz answer
+
+```
+  POST /validate/flags
+```
+
+| sent by |Parameter | Type     |                 
+| :-------- |:-------- | :------- | 
+| `header` |`authorization` | `Bearer token` | 
+| `body` |`quizId` | `number` | 
+| `body` |`answer` | `string` | 
+
+#### get a list of territories quizzes
+
+```
+  POST /territories/:level
+```
+
+| sent by |Parameter | Type     |                 
+| :-------- |:-------- | :------- | 
+| `header` |`authorization` | `Bearer token` | 
+| `params` |`level` | `string` |
+
+level must be "easy", "medium", "hard"
+
+#### Validate an territories quiz answer
+
+```
+  POST /validate/territories
+```
+
+| sent by |Parameter | Type     |                 
+| :-------- |:-------- | :------- | 
+| `header` |`authorization` | `Bearer token` | 
+| `body` |`quizId` | `number` | 
+| `body` |`answer` | `string` | 
+
+
+#### List best players of day
+
+```
+  GET /users/ranking
+```
+
+| sent by |Parameter | Type     |                 
+| :-------- |:-------- | :------- | 
+| `header` |`authorization` | `Bearer token` | 
+
+

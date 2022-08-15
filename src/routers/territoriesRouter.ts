@@ -5,6 +5,6 @@ import { dataVerifyQuiz, validateLevelSent } from "../middlewares/QuizzesMiddlew
 const territoriesRouter = Router()
 
 territoriesRouter.get("/territories/:level",validateLevelSent, sendTerritoriesByLevel)
-territoriesRouter.post("/validate/territories/", dataVerifyQuiz, verifyAnswerTerritories)
+territoriesRouter.post("/validate/territories", dataVerifyQuiz, verifyAnswerTerritories)
 
 export default territoriesRouter

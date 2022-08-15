@@ -57,7 +57,7 @@ export const territoriesData = [
         name: "https://www.arealme.com/geography/images/11.png",
         country: "Egypt",
         levelId: 2,
-        options: ["Algeria", "Libya", "Niger", "Egypt"]
+        options: ["Algeria", "Libya", "Niger", "Siria"]
     },
     {
         name: "https://www.arealme.com/geography/images/12.png",

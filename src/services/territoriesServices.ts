@@ -1,7 +1,8 @@
+import { territoriesQuiz } from "@prisma/client"
 import * as territoriesRepository from "../repositories/territoriesRepository.js"
 import * as utils from "../utils/functionsUtils.js"
 
-async function getAndSuffleTerritories(level){
+async function getAndSuffleTerritories(level: string){
     const territories = await territoriesRepository.getAllTerritories(level)
     utils.suffleArray(territories, 10)
     territories.forEach(territory => {
@@ -24,7 +25,7 @@ async function verifyAndGetQuizById(id: number){
     return quiz
 }
 
-async function validateAnswer(quiz, answer){
+async function validateAnswer(quiz: territoriesQuiz, answer: string){
     if(quiz.country !== answer){
         return false
     } else {

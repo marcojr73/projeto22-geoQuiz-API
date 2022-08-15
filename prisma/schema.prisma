@@ -24,7 +24,7 @@ model gameScore {
 
 model capitalsQuiz {
   id                        Int                 @id @default(autoincrement())
-  country                   String
+  country                   String              @unique
   capital                   String
   cityTwo                   String
   cityThree                 String
@@ -38,7 +38,7 @@ model capitalsQuiz {
 model territoriesQuiz {
   id                        Int                 @id @default(autoincrement())
   name                      String
-  country                   String
+  country                   String              @unique
   options                   String[]
   levelId                   Int
   levels                    levels              @relation(fields: [levelId], references: [id])
@@ -47,7 +47,7 @@ model territoriesQuiz {
 
 model flagsQuiz {
   id                        Int                 @id @default(autoincrement())
-  country                   String
+  country                   String              @unique
   flag                      String
   levelId                   Int
   levels                    levels              @relation(fields: [levelId], references: [id])
@@ -56,7 +56,7 @@ model flagsQuiz {
 
 model levels {
   id                        Int                 @id @default(autoincrement())
-  level                     String
+  level                     String              @unique
   createdAt                 DateTime            @default(now())
   capitalsQuiz              capitalsQuiz[]
   territoriesQuiz           territoriesQuiz[]
