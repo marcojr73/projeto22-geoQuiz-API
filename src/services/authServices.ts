@@ -1,6 +1,7 @@
 import bcrypt from "bcrypt"
 import dotenv from "dotenv"
 import jwt from 'jsonwebtoken'
+import sgMail from "@sendgrid/mail"
 
 
 import * as userRepository from "../repositories/userRepository.js"
@@ -42,10 +43,33 @@ function generateToken(userId: number){
     return jwt.sign({ userId }, KEYJWT, { expiresIn: '7d'})
 }
 
+async function buildEmail(email: string){
+    dotenv.config()
+    const {SGKEY} = process.env
+    sgMail.setApiKey(SGKEY)
+    const message = "Here you can practice your knowledge in geography, we have questions about capitals flags and territories of almost every country in the world! Don't waste time and come reach the top #1 of our ranking! And if you liked it, don't forget to challenge your friends too."
+    try {
+        const body = {
+            to: email,
+            from: "marcojuniorengineer@gmail.com",
+            subject: "Hello! Welcome to GeoQuiz",
+            text: message
+        }
+        await sgMail.send(body)
+
+    } catch (error) {
+        throw {
+            status: 201,
+            message: "User Created but fail to send mail"
+        }
+    }
+}
+
 export{
     isEmailAlreadyinUse,
     registerNewUser,
     verifyAndGetIfUserExists,
     verifyPasswordIsCorrect,
-    generateToken
+    generateToken,
+    buildEmail
 }

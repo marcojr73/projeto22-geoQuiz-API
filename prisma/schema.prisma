@@ -6,7 +6,7 @@ model users {
   id                        Int                 @id @default(autoincrement())
   name                      String
   email                     String              @unique
-  picture                   String              @default("http://neoleader.com.br/wp-content/uploads/2015/05/geral_adulto-300x300.png")
+  picture                   String?             @default("http://neoleader.com.br/wp-content/uploads/2015/05/geral_adulto-300x300.png")
   password                  String
   hits                      Int                 @default(0)
   mistakes                  Int                 @default(0)

@@ -6,7 +6,6 @@ import { TdataSignIn, TdataSignUp } from "../utils/typesUtils"
 async function validateDataSignUp(req: Request, res: Response, next: NextFunction){
     
     let {name, email, password, confirmPassword, picture}: TdataSignUp = req.body
-
     if(!picture){
         picture = "http://neoleader.com.br/wp-content/uploads/2015/05/geral_adulto-300x300.png"
     }

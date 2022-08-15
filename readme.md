@@ -37,6 +37,7 @@ Instale meu projeto e configure o .env como no exemplo
 
 - Node.js
 - TypeScript
+- Express
 - ORM (prisma)
 - Autenticação por token JWT
 
