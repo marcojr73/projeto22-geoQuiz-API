@@ -58,7 +58,7 @@ Instale meu projeto e configure o .env como no exemplo
 | `body` |`email` | `string` |
 | `body` |`password` | `string` |
 | `body` |`confirmPassword` | `string` |
-| `body` |`picture` | `string` |
+| `body` |`picture*` | `string` |
 
 #### Sign-in
 
@@ -71,10 +71,10 @@ Instale meu projeto e configure o .env como no exemplo
 | `body` |`email` | `string` | 
 | `body` |`password` | `string` |
 
-#### get a list of capital quizzes
+#### get a list of capitals quizzes
 
 ```
-  POST /capitals/:level
+  GET /capitals/:level
 ```
 
 | sent by |Parameter | Type     |                 
@@ -100,7 +100,7 @@ level must be "easy", "medium", "hard"
 #### get a list of flags quizzes
 
 ```
-  POST /flags/:level
+  GET /flags/:level
 ```
 
 | sent by |Parameter | Type     |                 
@@ -110,7 +110,7 @@ level must be "easy", "medium", "hard"
 
 level must be "easy", "medium", "hard"
 
-#### Validate an capital quiz answer
+#### Validate an flag quiz answer
 
 ```
   POST /validate/flags
@@ -125,7 +125,7 @@ level must be "easy", "medium", "hard"
 #### get a list of territories quizzes
 
 ```
-  POST /territories/:level
+  GET /territories/:level
 ```
 
 | sent by |Parameter | Type     |                 
@@ -135,7 +135,7 @@ level must be "easy", "medium", "hard"
 
 level must be "easy", "medium", "hard"
 
-#### Validate an territories quiz answer
+#### Validate an territory quiz answer
 
 ```
   POST /validate/territories
