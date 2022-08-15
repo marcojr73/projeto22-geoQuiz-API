@@ -5,16 +5,14 @@ import { TdataSignIn, TdataSignUp } from "../utils/typesUtils"
 
 async function validateDataSignUp(req: Request, res: Response, next: NextFunction){
     
-    const {name, email, password, confirmPassword}: TdataSignUp = req.body
+    const {name, email, password, confirmPassword, picture}: TdataSignUp = req.body
 
-    console.log(req.file)
-    
     if(password !== confirmPassword) throw {
         status: 403,
         message: "expected password to equal confirmPassword"
     }
     
-    await schemas.schemaSignUp.validateAsync({name, email, password})
+    await schemas.schemaSignUp.validateAsync({name, email, password, picture})
 
     next()
 }
