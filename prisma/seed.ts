@@ -11,18 +11,30 @@ dotenv.config()
 console.log("seed running on base" + process.env.DATABASE_URL)
 
 async function seed(){
-    await prisma.levels.createMany({
-        data: levelsData
-    })
-    await prisma.capitalsQuiz.createMany({
-        data: capitalsdata
-    })
-    await prisma.flagsQuiz.createMany({
-        data: flagsData
-    })
-    await prisma.territoriesQuiz.createMany({
-        data: territoriesData
-    })
+    const isLevels = await prisma.levels.findFirst({}) 
+    if(!isLevels) {
+        await prisma.levels.createMany({
+            data: levelsData
+        })
+    }
+    const isCapitals = await prisma.capitalsQuiz.findFirst({}) 
+    if(!isCapitals){
+        await prisma.capitalsQuiz.createMany({
+            data: capitalsdata
+        })
+    }
+    const isFlags = await prisma.flagsQuiz.findFirst({}) 
+    if(!isFlags){
+        await prisma.flagsQuiz.createMany({
+            data: flagsData
+        })
+    }
+    const isTerritories = await prisma.territoriesQuiz.findFirst({}) 
+    if(!isTerritories){
+        await prisma.territoriesQuiz.createMany({
+            data: territoriesData
+        })
+    }
 }seed().catch(e => {
     console.log(e)
     process.exit(1)
