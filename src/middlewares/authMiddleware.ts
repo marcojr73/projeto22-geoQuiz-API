@@ -6,6 +6,7 @@ import { TdataSignIn, TdataSignUp } from "../utils/typesUtils"
 async function validateDataSignUp(req: Request, res: Response, next: NextFunction){
     
     let {name, email, password, confirmPassword, picture}: TdataSignUp = req.body
+    console.log("1", name, email, password, confirmPassword, picture)
     if(!picture){
         picture = "http://neoleader.com.br/wp-content/uploads/2015/05/geral_adulto-300x300.png"
     }
@@ -16,7 +17,7 @@ async function validateDataSignUp(req: Request, res: Response, next: NextFunctio
     }
     
     await schemas.schemaSignUp.validateAsync({name, email, password, picture})
-
+    console.log("2", name, email, password, confirmPassword, picture)
     next()
 }
 
