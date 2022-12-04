@@ -4,7 +4,6 @@ import {capitalsQuiz} from "@prisma/client"
 
 async function getAndSuffleCapitals(level: string){
     let quiz = await capitalsRepository.getAllcapitals(level)
-    console.log(quiz[0])
     quiz = utils.suffleArray(quiz[0].capitalsQuiz, 10)
     return suffleOptions(quiz)
 }
