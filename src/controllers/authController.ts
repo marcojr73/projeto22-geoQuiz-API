@@ -18,9 +18,8 @@ async function signUp(req: Request, res: Response){
 }
 
 async function signIn(req: Request, res: Response){
-    
-    const {email, password}: TdataSignIn = req.body
 
+    const {email, password}: TdataSignIn = req.body
     const user = await authServices.verifyAndGetIfUserExists(email)
     authServices.verifyPasswordIsCorrect(password, user.password)
     const token = authServices.generateToken(user.id)
