@@ -16,24 +16,28 @@ async function seed(){
         await prisma.levels.createMany({
             data: levelsData
         })
+        console.log("levels created")
     }
     const isCapitals = await prisma.capitalsQuiz.findFirst({}) 
     if(!isCapitals){
         await prisma.capitalsQuiz.createMany({
             data: capitalsdata
         })
+        console.log("capitals quiz created")
     }
     const isFlags = await prisma.flagsQuiz.findFirst({}) 
     if(!isFlags){
         await prisma.flagsQuiz.createMany({
             data: flagsData
         })
+        console.log("flags quiz created")
     }
     const isTerritories = await prisma.territoriesQuiz.findFirst({}) 
     if(!isTerritories){
         await prisma.territoriesQuiz.createMany({
             data: territoriesData
         })
+        console.log("territories quiz created")
     }
 }seed().catch(e => {
     console.log(e)
