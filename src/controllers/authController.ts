@@ -24,7 +24,6 @@ async function signIn(req: Request, res: Response){
     authServices.verifyPasswordIsCorrect(password, user.password)
     const token = authServices.generateToken(user.id)
 
-
     res.status(200).send(token)
 }
 
