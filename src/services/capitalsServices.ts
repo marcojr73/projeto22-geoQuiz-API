@@ -1,6 +1,7 @@
-import * as capitalsRepository from "../repositories/capitalsRepositories.js"
-import * as utils from "../utils/functionsUtils.js"
+import capitalsRepository from "../repositories/capitalsRepositories.js"
+import utils from "../utils/functionsUtils.js"
 import {capitalsQuiz} from "@prisma/client"
+import errors from "../utils/errors.js"
 
 async function getAndSuffleCapitals(level: string){
     let quiz = await capitalsRepository.getAllcapitals(level)
@@ -25,10 +26,7 @@ function suffleOptions(quiz){
 
 async function verifyAndGetQuizById(id: number){
     const quiz = await capitalsRepository.getQuizById(id)
-    if(!quiz) throw {
-        status: 404,
-        message: "quiz not found"
-    }
+    if(!quiz) throw errors.notFound("quiz not found")
     return quiz
 }
 
@@ -41,8 +39,9 @@ function validateAnswer(quiz: capitalsQuiz, answer: string){
 }
 
 
-export {
+export default {
     getAndSuffleCapitals,
     verifyAndGetQuizById,
-    validateAnswer
+    validateAnswer,
+    suffleOptions
 }

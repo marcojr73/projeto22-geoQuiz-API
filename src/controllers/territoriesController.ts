@@ -1,6 +1,6 @@
 import { Request, Response } from "express";
-import * as utils from "../utils/functionsUtils.js"
-import * as territoriesServices from "../services/territoriesServices.js"
+import utils from "../utils/functionsUtils.js"
+import territoriesServices from "../services/territoriesServices.js"
 
 async function sendTerritoriesByLevel(req: Request, res: Response){
 

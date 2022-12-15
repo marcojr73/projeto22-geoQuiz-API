@@ -1,6 +1,6 @@
 import { Request, Response } from "express";
-import * as utils from "../utils/functionsUtils.js"
-import * as capitalsServices from "../services/capitalsServices.js"
+import utils from "../utils/functionsUtils.js"
+import capitalsServices from "../services/capitalsServices.js"
 
 async function sendCapitalsByLevel(req: Request, res: Response){
 

@@ -1,6 +1,7 @@
 import { territoriesQuiz } from "@prisma/client"
-import * as territoriesRepository from "../repositories/territoriesRepository.js"
-import * as utils from "../utils/functionsUtils.js"
+import territoriesRepository from "../repositories/territoriesRepository.js"
+import errors from "../utils/errors.js"
+import utils from "../utils/functionsUtils.js"
 
 async function getAndSuffleTerritories(level: string){
     const territories = await territoriesRepository.getAllTerritories(level)
@@ -18,10 +19,7 @@ async function assembleTerritories(territory){
 
 async function verifyAndGetQuizById(id: number){
     const quiz = await territoriesRepository.getQuizById(id)
-    if(!quiz) throw {
-        status: 404,
-        message: "Quiz not found"
-    }
+    if(!quiz) throw errors.notFound("Quiz not found")
     return quiz
 }
 
@@ -33,8 +31,9 @@ async function validateAnswer(quiz: territoriesQuiz, answer: string){
     }
 }
 
-export {
+export default {
     getAndSuffleTerritories,
+    assembleTerritories,
     verifyAndGetQuizById,
     validateAnswer
 }

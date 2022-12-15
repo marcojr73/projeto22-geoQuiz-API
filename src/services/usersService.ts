@@ -1,17 +1,14 @@
-import * as usersRepository from "../repositories/userRepository.js"
-import dayjs from 'dayjs'
+import userRepository from "../repositories/userRepository.js"
+import errors from "../utils/errors.js"
 
-async function getUserById(id: number){
-    const user = await usersRepository.getUserById(id)
-    if(!user) throw {
-        status: 404,
-        message: "user not found"
-    }
+async function getUserById(id: number) {
+    const user = await userRepository.getUserById(id)
+    if (!user) throw errors.notFound("user not found")
     return user
 }
 
-async function calculateWeekScoreByUser(id: number){
-    const score = await usersRepository.getHistoryGames() as any
+async function calculateWeekScoreByUser(id: number) {
+    const score = await userRepository.getHistoryGames() as any
     score.forEach(score => {
         score.weekScore = toJson(score.weekScore)
     })
@@ -19,11 +16,11 @@ async function calculateWeekScoreByUser(id: number){
 }
 
 function toJson(weekScore) {
-    return  JSON.stringify(weekScore, (_, v) => typeof v === 'bigint' ? `${v}n` : v)
-            .replace(/"(-?\d+)n"/g, (_, a) => a)
+    return JSON.stringify(weekScore, (_, v) => typeof v === 'bigint' ? `${v}n` : v)
+        .replace(/"(-?\d+)n"/g, (_, a) => a)
 }
 
-export {
+export default {
     getUserById,
     calculateWeekScoreByUser
 }

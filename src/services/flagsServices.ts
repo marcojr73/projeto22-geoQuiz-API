@@ -1,6 +1,7 @@
 import { flagsQuiz } from "@prisma/client"
-import * as flagsRepository from "../repositories/flagsRepository.js"
-import * as utils from "../utils/functionsUtils.js"
+import flagsRepository from "../repositories/flagsRepository.js"
+import errors from "../utils/errors.js"
+import utils from "../utils/functionsUtils.js"
 
 async function getAndSuffleFlags(level: string) {
     let quiz = await flagsRepository.getAllFlags(level)
@@ -30,14 +31,11 @@ function assembleObject(quiz){
 
 async function verifyAndGetQuizById(id: number){
     const quiz = await flagsRepository.getFlagById(id)
-    if(!quiz) throw {
-        status: 404,
-        message: "quiz not found"
-    }
+    if(!quiz) throw errors.notFound("quiz not found")
     return quiz
 }
 
-async function validateAnswer(quiz: flagsQuiz, answer: string){
+function validateAnswer(quiz: flagsQuiz, answer: string){
     if(quiz.country !== answer){
         return false
     } else {
@@ -46,7 +44,7 @@ async function validateAnswer(quiz: flagsQuiz, answer: string){
 }
 
 
-export {
+export default {
     getAndSuffleFlags,
     verifyAndGetQuizById,
     validateAnswer

@@ -1,8 +1,7 @@
 import bcrypt from "bcrypt"
 import dotenv from "dotenv"
 import jwt from "jsonwebtoken"
-import {capitalsQuiz} from "@prisma/client"
-import * as userRepository from "../repositories/userRepository.js"
+import userRepository from "../repositories/userRepository.js"
 
 async function encryptPassword(password: string){
     dotenv.config()
@@ -46,7 +45,7 @@ async function updateWeekScore(quiz, userId: number){
     await userRepository.createGameScore(userId, ponctuation)
 }
 
-export {
+export default {
     encryptPassword,
     validateTokenAndGetUser,
     suffleArray,

@@ -1,8 +1,8 @@
 
 import { Request, Response } from "express";
 import { TdataSignUp, TdataSignIn } from "../utils/typesUtils";
-import * as authServices from "../services/authServices.js"
-import * as util from "../utils/functionsUtils.js"
+import authServices from "../services/authServices.js"
+import util from "../utils/functionsUtils.js"
 
 
 async function signUp(req: Request, res: Response){

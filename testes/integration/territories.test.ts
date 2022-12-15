@@ -2,7 +2,7 @@ import supertest from "supertest"
 import { prisma } from "../../src/config/database.js"
 import app from "../../src/app.js"
 import dotenv from "dotenv"
-import * as factory from "../factories/integrationFactory.js"
+import * as factory from "../factories/dataFactory.js"
 
 dotenv.config()
 

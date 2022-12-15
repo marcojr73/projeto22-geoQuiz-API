@@ -66,7 +66,7 @@ async function getUsersList(){
     })
 }
 
-export {
+export default {
     findUserByEmail,
     getUserById,
     registerNewUser,

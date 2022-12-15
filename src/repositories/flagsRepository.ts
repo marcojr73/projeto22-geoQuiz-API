@@ -21,7 +21,7 @@ async function getFlagById(id: number){
     })
 }
 
-export {
+export default {
     getAllFlags,
     getFlagById
 }

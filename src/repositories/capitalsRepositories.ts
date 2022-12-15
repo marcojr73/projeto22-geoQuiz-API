@@ -27,7 +27,7 @@ async function getQuizById(id: number){
 }
 
 
-export {
+export default {
     getAllcapitals,
     getQuizById
 }

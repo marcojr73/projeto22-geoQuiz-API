@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<coverage generated="1671140269945" clover="3.2.0">
+  <project timestamp="1671140269945" name="All files">
+    <metrics statements="146" coveredstatements="93" conditionals="18" coveredconditionals="14" methods="73" coveredmethods="42" elements="237" coveredelements="149" complexity="0" loc="146" ncloc="146" packages="5" files="14" classes="14"/>
+    <package name="src.config">
+      <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      <file name="database.ts" path="/home/marco/Área de Trabalho/driven/projeto-22/projeto22-geoQuiz-API/src/config/database.ts">
+        <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="3" count="5" type="stmt"/>
+        <line num="4" count="5" type="stmt"/>
+      </file>
+    </package>
+    <package name="src.repositories">
+      <metrics statements="15" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="14" coveredmethods="0"/>
+      <file name="capitalsRepositories.ts" path="/home/marco/Área de Trabalho/driven/projeto-22/projeto22-geoQuiz-API/src/repositories/capitalsRepositories.ts">
+        <metrics statements="2" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="0"/>
+        <line num="5" count="0" type="stmt"/>
+        <line num="24" count="0" type="stmt"/>
+      </file>
+      <file name="flagsRepository.ts" path="/home/marco/Área de Trabalho/driven/projeto-22/projeto22-geoQuiz-API/src/repositories/flagsRepository.ts">
+        <metrics statements="2" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="0"/>
+        <line num="4" count="0" type="stmt"/>
+        <line num="19" count="0" type="stmt"/>
+      </file>
+      <file name="territoriesRepository.ts" path="/home/marco/Área de Trabalho/driven/projeto-22/projeto22-geoQuiz-API/src/repositories/territoriesRepository.ts">
+        <metrics statements="3" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="0"/>
+        <line num="4" count="0" type="stmt"/>
+        <line num="17" count="0" type="stmt"/>
+        <line num="21" count="0" type="stmt"/>
+      </file>
+      <file name="userRepository.ts" path="/home/marco/Área de Trabalho/driven/projeto-22/projeto22-geoQuiz-API/src/repositories/userRepository.ts">
+        <metrics statements="8" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="8" coveredmethods="0"/>
+        <line num="5" count="0" type="stmt"/>
+        <line num="11" count="0" type="stmt"/>
+        <line num="23" count="0" type="stmt"/>
+        <line num="29" count="0" type="stmt"/>
+        <line num="36" count="0" type="stmt"/>
+        <line num="43" count="0" type="stmt"/>
+        <line num="52" count="0" type="stmt"/>
+        <line num="61" count="0" type="stmt"/>
+      </file>
+    </package>
+    <package name="src.services">
+      <metrics statements="80" coveredstatements="71" conditionals="16" coveredconditionals="14" methods="26" coveredmethods="24"/>
+      <file name="authServices.ts" path="/home/marco/Área de Trabalho/driven/projeto-22/projeto22-geoQuiz-API/src/services/authServices.ts">
+        <metrics statements="19" coveredstatements="11" conditionals="3" coveredconditionals="2" methods="6" coveredmethods="5"/>
+        <line num="11" count="2" type="stmt"/>
+        <line num="12" count="2" type="cond" truecount="1" falsecount="0"/>
+        <line num="16" count="2" type="stmt"/>
+        <line num="17" count="2" type="cond" truecount="1" falsecount="0"/>
+        <line num="18" count="1" type="stmt"/>
+        <line num="22" count="1" type="stmt"/>
+        <line num="26" count="2" type="stmt"/>
+        <line num="27" count="2" type="cond" truecount="0" falsecount="1"/>
+        <line num="31" count="1" type="stmt"/>
+        <line num="32" count="1" type="stmt"/>
+        <line num="33" count="1" type="stmt"/>
+        <line num="37" count="0" type="stmt"/>
+        <line num="38" count="0" type="stmt"/>
+        <line num="39" count="0" type="stmt"/>
+        <line num="40" count="0" type="stmt"/>
+        <line num="41" count="0" type="stmt"/>
+        <line num="42" count="0" type="stmt"/>
+        <line num="48" count="0" type="stmt"/>
+        <line num="51" count="0" type="stmt"/>
+      </file>
+      <file name="capitalsServices.ts" path="/home/marco/Área de Trabalho/driven/projeto-22/projeto22-geoQuiz-API/src/services/capitalsServices.ts">
+        <metrics statements="20" coveredstatements="20" conditionals="3" coveredconditionals="3" methods="5" coveredmethods="5"/>
+        <line num="7" count="1" type="stmt"/>
+        <line num="8" count="1" type="stmt"/>
+        <line num="9" count="1" type="stmt"/>
+        <line num="13" count="1" type="stmt"/>
+        <line num="14" count="1" type="stmt"/>
+        <line num="15" count="1" type="stmt"/>
+        <line num="16" count="1" type="stmt"/>
+        <line num="17" count="1" type="stmt"/>
+        <line num="18" count="1" type="stmt"/>
+        <line num="19" count="1" type="stmt"/>
+        <line num="20" count="1" type="stmt"/>
+        <line num="21" count="1" type="stmt"/>
+        <line num="22" count="1" type="stmt"/>
+        <line num="24" count="1" type="stmt"/>
+        <line num="28" count="2" type="stmt"/>
+        <line num="29" count="2" type="cond" truecount="1" falsecount="0"/>
+        <line num="30" count="1" type="stmt"/>
+        <line num="34" count="2" type="cond" truecount="2" falsecount="0"/>
+        <line num="35" count="1" type="stmt"/>
+        <line num="37" count="1" type="stmt"/>
+      </file>
+      <file name="flagsServices.ts" path="/home/marco/Área de Trabalho/driven/projeto-22/projeto22-geoQuiz-API/src/services/flagsServices.ts">
+        <metrics statements="19" coveredstatements="19" conditionals="4" coveredconditionals="4" methods="4" coveredmethods="4"/>
+        <line num="7" count="1" type="stmt"/>
+        <line num="8" count="1" type="stmt"/>
+        <line num="9" count="1" type="stmt"/>
+        <line num="13" count="1" type="stmt"/>
+        <line num="14" count="1" type="stmt"/>
+        <line num="15" count="10" type="stmt"/>
+        <line num="16" count="10" type="stmt"/>
+        <line num="17" count="100" type="cond" truecount="1" falsecount="0"/>
+        <line num="18" count="90" type="stmt"/>
+        <line num="21" count="10" type="stmt"/>
+        <line num="22" count="10" type="stmt"/>
+        <line num="27" count="10" type="stmt"/>
+        <line num="29" count="1" type="stmt"/>
+        <line num="33" count="2" type="stmt"/>
+        <line num="34" count="2" type="cond" truecount="1" falsecount="0"/>
+        <line num="35" count="1" type="stmt"/>
+        <line num="39" count="2" type="cond" truecount="2" falsecount="0"/>
+        <line num="40" count="1" type="stmt"/>
+        <line num="42" count="1" type="stmt"/>
+      </file>
+      <file name="territoriesServices.ts" path="/home/marco/Área de Trabalho/driven/projeto-22/projeto22-geoQuiz-API/src/services/territoriesServices.ts">
+        <metrics statements="13" coveredstatements="13" conditionals="3" coveredconditionals="3" methods="5" coveredmethods="5"/>
+        <line num="7" count="1" type="stmt"/>
+        <line num="8" count="1" type="stmt"/>
+        <line num="9" count="1" type="stmt"/>
+        <line num="10" count="10" type="stmt"/>
+        <line num="12" count="1" type="stmt"/>
+        <line num="16" count="11" type="stmt"/>
+        <line num="17" count="11" type="stmt"/>
+        <line num="21" count="2" type="stmt"/>
+        <line num="22" count="2" type="cond" truecount="1" falsecount="0"/>
+        <line num="23" count="1" type="stmt"/>
+        <line num="27" count="2" type="cond" truecount="2" falsecount="0"/>
+        <line num="28" count="1" type="stmt"/>
+        <line num="30" count="1" type="stmt"/>
+      </file>
+      <file name="usersService.ts" path="/home/marco/Área de Trabalho/driven/projeto-22/projeto22-geoQuiz-API/src/services/usersService.ts">
+        <metrics statements="9" coveredstatements="8" conditionals="3" coveredconditionals="2" methods="6" coveredmethods="5"/>
+        <line num="5" count="2" type="stmt"/>
+        <line num="6" count="2" type="cond" truecount="1" falsecount="0"/>
+        <line num="7" count="1" type="stmt"/>
+        <line num="11" count="1" type="stmt"/>
+        <line num="12" count="1" type="stmt"/>
+        <line num="13" count="6" type="stmt"/>
+        <line num="15" count="1" type="stmt"/>
+        <line num="19" count="6" type="cond" truecount="1" falsecount="1"/>
+        <line num="20" count="0" type="stmt"/>
+      </file>
+    </package>
+    <package name="src.utils">
+      <metrics statements="18" coveredstatements="5" conditionals="2" coveredconditionals="0" methods="11" coveredmethods="4"/>
+      <file name="errors.ts" path="/home/marco/Área de Trabalho/driven/projeto-22/projeto22-geoQuiz-API/src/utils/errors.ts">
+        <metrics statements="3" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="2"/>
+        <line num="2" count="1" type="stmt"/>
+        <line num="9" count="5" type="stmt"/>
+        <line num="16" count="0" type="stmt"/>
+      </file>
+      <file name="functionsUtils.ts" path="/home/marco/Área de Trabalho/driven/projeto-22/projeto22-geoQuiz-API/src/utils/functionsUtils.ts">
+        <metrics statements="15" coveredstatements="3" conditionals="2" coveredconditionals="0" methods="8" coveredmethods="2"/>
+        <line num="7" count="0" type="stmt"/>
+        <line num="8" count="0" type="stmt"/>
+        <line num="12" count="0" type="cond" truecount="0" falsecount="1"/>
+        <line num="17" count="0" type="stmt"/>
+        <line num="18" count="0" type="stmt"/>
+        <line num="19" count="0" type="cond" truecount="0" falsecount="1"/>
+        <line num="23" count="0" type="stmt"/>
+        <line num="25" count="0" type="stmt"/>
+        <line num="29" count="31" type="stmt"/>
+        <line num="30" count="314" type="stmt"/>
+        <line num="32" count="31" type="stmt"/>
+        <line num="36" count="0" type="stmt"/>
+        <line num="40" count="0" type="stmt"/>
+        <line num="44" count="0" type="stmt"/>
+        <line num="45" count="0" type="stmt"/>
+      </file>
+    </package>
+    <package name="testes.factories">
+      <metrics statements="31" coveredstatements="15" conditionals="0" coveredconditionals="0" methods="22" coveredmethods="14"/>
+      <file name="dataFactory.ts" path="/home/marco/Área de Trabalho/driven/projeto-22/projeto22-geoQuiz-API/testes/factories/dataFactory.ts">
+        <metrics statements="25" coveredstatements="10" conditionals="0" coveredconditionals="0" methods="16" coveredmethods="9"/>
+        <line num="7" count="0" type="stmt"/>
+        <line num="8" count="0" type="stmt"/>
+        <line num="17" count="0" type="stmt"/>
+        <line num="21" count="0" type="stmt"/>
+        <line num="22" count="0" type="stmt"/>
+        <line num="30" count="0" type="stmt"/>
+        <line num="34" count="0" type="stmt"/>
+        <line num="38" count="3" type="stmt"/>
+        <line num="39" count="3" type="stmt"/>
+        <line num="43" count="0" type="stmt"/>
+        <line num="44" count="0" type="stmt"/>
+        <line num="45" count="0" type="stmt"/>
+        <line num="49" count="0" type="stmt"/>
+        <line num="50" count="0" type="stmt"/>
+        <line num="51" count="0" type="stmt"/>
+        <line num="55" count="0" type="stmt"/>
+        <line num="56" count="0" type="stmt"/>
+        <line num="60" count="4" type="stmt"/>
+        <line num="64" count="1" type="stmt"/>
+        <line num="73" count="4" type="stmt"/>
+        <line num="77" count="10" type="stmt"/>
+        <line num="81" count="2" type="stmt"/>
+        <line num="95" count="2" type="stmt"/>
+        <line num="105" count="3" type="stmt"/>
+        <line num="116" count="1" type="stmt"/>
+      </file>
+      <file name="mockFactory.ts" path="/home/marco/Área de Trabalho/driven/projeto-22/projeto22-geoQuiz-API/testes/factories/mockFactory.ts">
+        <metrics statements="6" coveredstatements="5" conditionals="0" coveredconditionals="0" methods="6" coveredmethods="5"/>
+        <line num="4" count="8" type="stmt"/>
+        <line num="8" count="9" type="stmt"/>
+        <line num="12" count="0" type="stmt"/>
+        <line num="19" count="2" type="stmt"/>
+        <line num="115" count="2" type="stmt"/>
+        <line num="170" count="2" type="stmt"/>
+      </file>
+    </package>
+  </project>
+</coverage>

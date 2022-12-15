@@ -1,6 +1,6 @@
 import { Request, Response } from "express";
-import * as utils from "../utils/functionsUtils.js"
-import * as flagsServices from "../services/flagsServices.js"
+import utils from "../utils/functionsUtils.js"
+import flagsServices from "../services/flagsServices.js"
 
 async function sendFlagsByLevel(req: Request, res: Response){
 
@@ -20,7 +20,7 @@ async function verifyAnswerFlags(req: Request, res: Response){
 
     const userId: number = await utils.validateTokenAndGetUser(token)
     const quiz = await flagsServices.verifyAndGetQuizById(quizId)
-    const isCorrect = await flagsServices.validateAnswer(quiz, answer)
+    const isCorrect = flagsServices.validateAnswer(quiz, answer)
     if(isCorrect) await utils.updateHitsUser(userId)
     if(!isCorrect) await utils.updateMistakesUser(userId)
     if(isCorrect) await utils.updateWeekScore(quiz, userId)

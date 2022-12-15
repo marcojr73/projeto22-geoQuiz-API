@@ -3,25 +3,18 @@ import dotenv from "dotenv"
 import jwt from 'jsonwebtoken'
 import sgMail from "@sendgrid/mail"
 
-
-import * as userRepository from "../repositories/userRepository.js"
+import userRepository from "../repositories/userRepository.js"
 import { TcreateUser } from "../utils/typesUtils.js"
+import errors from "../utils/errors.js"
 
 async function isEmailAlreadyinUse(email: string){
     const user = await userRepository.findUserByEmail(email)
-
-    if(user) throw {
-        status: 409,
-        message: "this email already in use"
-    }
+    if(user) throw errors.conflictError("this email already in use")
 }
 
 async function verifyAndGetIfUserExists(email: string){
     const user = await userRepository.findUserByEmail(email)
-    if(!user) throw {
-        status: 404,
-        message: "does not exist account register for this email"
-    }
+    if(!user) throw errors.notFound("does not exist account register for this email")
     return user
 }
 
@@ -31,10 +24,7 @@ async function registerNewUser(data: TcreateUser){
 
 function verifyPasswordIsCorrect(password: string, passCrypt: string){
     const ans = bcrypt.compareSync(password, passCrypt)
-    if(!ans) throw {
-        status: 422,
-        message: "this password is incorrect"
-    }
+    if(!ans) throw errors.unprocessableEntity("this password is incorrect")
 }
 
 function generateToken(userId: number){
@@ -65,7 +55,7 @@ async function buildEmail(email: string){
     }
 }
 
-export{
+export default {
     isEmailAlreadyinUse,
     registerNewUser,
     verifyAndGetIfUserExists,
