@@ -3,7 +3,7 @@
 Aos 5 anos de idade Magnus Carlsen memorizou a superfície, população e as capitais de todos os países, anos mais tarde esse jovem viria a se tornar para muitos o maior jogador de xadrez de todos os tempos
 
 <p align="center">
-   <img width=350 src="https://projeto22-geo-quiz.vercel.app/static/media/logo.83d2cab8.png"/>
+   <img width=350 src="https://camo.githubusercontent.com/1057db7ca58a081bf7c7f277be37b010aa944b4836a7bdd2edc4d1eb2afc4eef/68747470733a2f2f70726f6a65746f32322d67656f2d7175697a2e76657263656c2e6170702f7374617469632f6d656469612f6c6f676f2e38336432636162382e706e67"/>
 </p>
 
 
@@ -38,6 +38,28 @@ Instale meu projeto e configure o .env como no exemplo
 
 ***
 
+
+## Execute com o docker
+
+Altere o **HOST** da variavel **DATABASE_URL** para "db"
+
+```bash
+  npm run docker:run
+```
+
+***
+
+## Testes
+
+Configure um arquivo **.env.test** na raiz do projeto para executar os testes
+
+```bash
+  npm run test:integration
+  npm run test:unity
+```
+
+***
+
 ##	 Tecnologias e Conceitos
 
 - Node.js
@@ -46,6 +68,8 @@ Instale meu projeto e configure o .env como no exemplo
 - ORM (prisma)
 - Autenticação por token JWT
 - Sendgrid (disparador de emails)
+- Testes automatizados
+- Docker, docker-compose
 
 ***
     
