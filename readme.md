@@ -41,7 +41,7 @@ Instale meu projeto e configure o .env como no exemplo
 
 ## Execute com o docker
 
-Altere o **HOST** da variavel **DATABASE_URL** para "db"
+Altere o **HOST** da variavel **DATABASE_URL** no .env para "db"
 
 ```bash
   npm run docker:run
@@ -60,6 +60,17 @@ Configure um arquivo **.env.test** na raiz do projeto para executar os testes
 
 ***
 
+## Documentação da API
+
+- Documentação da API utilizando o [Swagger](https://swagger.io/), uma ferramenta que permite a criação de uma *API reference* onde você pode especificar e testar os endpoints de forma organizada 
+- Depois de instalado e o projeto esteje executando, a documentação poderá ser acessada na rota "/docs" do seu navegador ou [clicando aqui](http://localhost:5000/docs)
+
+```
+  http://localhost:5000/docs
+```
+
+***
+
 ##	 Tecnologias e Conceitos
 
 - Node.js
@@ -72,13 +83,5 @@ Configure um arquivo **.env.test** na raiz do projeto para executar os testes
 - Docker, docker-compose
 - Swagger
 
-***
+
     
-## Documentação da API
-
-- Documentação da API utilizando o [Swagger](https://swagger.io/), uma ferramenta que permite a criação de uma *API reference* onde você pode especificar e testar os endpoints de forma organizada 
-- Depois de instalado e o projeto esteje executando, a documentação poderá ser acessada na rota "/docs" do seu navegador ou [clicando aqui](http://localhost:5000/docs)
-
-```
-  http://localhost:5000/docs
-```
