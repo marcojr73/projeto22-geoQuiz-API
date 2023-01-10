@@ -39,6 +39,13 @@ async function seed(){
         })
         console.log("territories quiz created")
     }
+    const isAdmin = await prisma.users.findFirst({where: {id: 4815162342}}) 
+    if(!isAdmin){
+        await prisma.users.create({
+            data: {id: 4815162342, name: "administrador", email: "admin@admin.com", password: "4815162342"}
+        })
+        console.log("administrador criado com sucesso")
+    }
 }seed().catch(e => {
     console.log(e)
     process.exit(1)

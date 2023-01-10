@@ -24,7 +24,7 @@ async function registerNewUser(data: TcreateUser){
 
 function verifyPasswordIsCorrect(password: string, passCrypt: string){
     const ans = bcrypt.compareSync(password, passCrypt)
-    if(!ans) throw errors.unprocessableEntity("this password is incorrect")
+    if(!ans) throw errors.forbidden("this password is incorrect")
 }
 
 function generateToken(userId: number){

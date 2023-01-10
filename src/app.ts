@@ -7,10 +7,15 @@ import capitalsRouter from "./routers/capitalsRouter.js"
 import FlagsRouter from "./routers/flagsRouter.js"
 import territoriesRouter from "./routers/territoriesRouter.js"
 import usersRouter from "./routers/usersRouter.js"
+import swaggerUi from "swagger-ui-express"
+// @ts-ignore
+import swaggerDocs from "./config/swagger.json" assert { type: "json" };
 
 const app = express()
 app.use(cors())
 app.use(express.json())
+app.use("/docs", swaggerUi.serve, swaggerUi.setup(swaggerDocs))
+
 
 app.use(authRouter)
 app.use(capitalsRouter)

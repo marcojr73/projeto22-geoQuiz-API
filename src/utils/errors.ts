@@ -19,8 +19,24 @@ function unprocessableEntity(message?: string){
     }
 }
 
+function forbidden(message?: string){
+    return {
+        status: 403,
+        message
+    }
+}
+
+function unauthorized(message?: string){
+    return {
+        status: 401,
+        message
+    }
+}
+
 export default {
     conflictError,
     notFound,
-    unprocessableEntity
+    unprocessableEntity,
+    forbidden,
+    unauthorized
 }

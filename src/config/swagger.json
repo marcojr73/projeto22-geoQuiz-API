@@ -1,0 +1,934 @@
+{
+    "openapi": "3.0.3",
+    "info": {
+        "title": "Geo-quiz-API",
+        "description": "Onde você pode testar seus conhecimentos sobre a geografia com os quizzes dessa API, separados por categorias (bandeiras, capitais e territórios) e dificuldade, No total foram 60 territórios, 164 capitais de países e 247 bandeiras cadastradas no banco de dados!",
+        "contact": {
+            "email": "marco.junior@engenharia.ufjf.br"
+        }
+    },
+    "servers": [
+        {
+            "url": "http://localhost:5000",
+            "description": "testes"
+        }
+    ],
+    "paths": {
+        "/sign-up": {
+            "post": {
+                "summary": "Cadastro de usuário",
+                "description": "Esta rota é responsável por validar se os dados estão no formato correto e se não há conflito com o banco de dados no registro de usuário",
+                "tags": [
+                    "Auth"
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/sign-up"
+                            },
+                            "examples": {
+                                "corpo correto": {
+                                    "value": {
+                                        "name": "Walter White",
+                                        "email": "walterwhite@gmail.com",
+                                        "password": "4815162342",
+                                        "confirmPassword": "4815162342",
+                                        "picture": "https://s2.glbimg.com/ULqXB1iOuyJPm0P5OI7TFtnn4IxzjEZ-7KmngMilo5XU1ff6rUDThcSUYr24qAFu/e.glbimg.com/og/ed/f/original/2013/10/01/walter_white_1.jpg"
+                                    }
+                                },
+                                "corpo incorreto": {
+                                    "value": {
+                                        "email": "walterwhite@gmail.com",
+                                        "password": "4815162342",
+                                        "confirmPassword": "4815162342",
+                                        "picture": "https://s2.glbimg.com/ULqXB1iOuyJPm0P5OI7TFtnn4IxzjEZ-7KmngMilo5XU1ff6rUDThcSUYr24qAFu/e.glbimg.com/og/ed/f/original/2013/10/01/walter_white_1.jpg"
+                                    }
+                                },
+                                "senhas incompatíveis": {
+                                    "value": {
+                                        "name": "Walter White",
+                                        "email": "walterwhite@gmail.com",
+                                        "password": "4815162342",
+                                        "confirmPassword": "exemplo de senha incompatível",
+                                        "picture": "https://s2.glbimg.com/ULqXB1iOuyJPm0P5OI7TFtnn4IxzjEZ-7KmngMilo5XU1ff6rUDThcSUYr24qAFu/e.glbimg.com/og/ed/f/original/2013/10/01/walter_white_1.jpg"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "User register sucessfull"
+                    },
+                    "403": {
+                        "description": "expected password to equal confirmPassword"
+                    },
+                    "422": {
+                        "description": "you send incorrect data"
+                    },
+                    "409": {
+                        "description": "this email already in use"
+                    }
+                }
+            }
+        },
+        "/sign-in": {
+            "post": {
+                "summary": "Login de usuário",
+                "description": "Esta rota é responsável por validar se os dados estão no formato correto e se as credenciais do usuário foram enviadas corretamente",
+                "tags": [
+                    "Auth"
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/sign-in"
+                            },
+                            "examples": {
+                                "corpo correto": {
+                                    "value": {
+                                        "email": "walterwhite@gmail.com",
+                                        "password": "4815162342"
+                                    }
+                                },
+                                "corpo incorreto": {
+                                    "value": {
+                                        "email": "walterwhite@gmail.com"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJidXNpbmVzc0lkIjoxNiwiaWF0IjoxNjcyOTUwNzE4LCJleHAiOjE2NzMwMzcxMTh9.1RQzj8AfVMgtm57E_-KVY23YzBh-cCP9o0XXj3Qpthc"
+                    },
+                    "404": {
+                        "description": "does not exist account register for this email"
+                    },
+                    "422": {
+                        "description": "you send incorrect data"
+                    },
+                    "403": {
+                        "description": "this password is incorrect"
+                    }
+                }
+            }
+        },
+        "/capitals/easy": {
+            "get": {
+                "summary": "obter um quiz de capitais na dificuldade fácil",
+                "description": "Esta é uma rota autenticacada e responsável por enviar um quiz de capitais na dificuldade fácil para o usuário \n Insira a chave 'ciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJidX' como token",
+                "tags": [
+                    "Capitals"
+                ],
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Quiz",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/definitions/quiz-capitals"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Token expired or invalid"
+                    }
+                }
+            }
+        },
+        "/capitals/medium": {
+            "get": {
+                "summary": "obter um quiz de capitais na dificuldade média",
+                "description": "Esta é uma rota autenticacada e responsável por enviar um quiz de capitais na dificuldade média para o usuário \n Insira a chave 'ciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJidX' como token",
+                "tags": [
+                    "Capitals"
+                ],
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Quiz",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/definitions/quiz-capitals"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Token expired or invalid"
+                    }
+                }
+            }
+        },
+        "/capitals/hard": {
+            "get": {
+                "summary": "obter um quiz de capitais na dificuldade difícil",
+                "description": "Esta é uma rota autenticacada e responsável por enviar um quiz de capitais na dificuldade difícil para o usuário \n Insira a chave 'ciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJidX' como token",
+                "tags": [
+                    "Capitals"
+                ],
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Quiz",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/definitions/quiz-capitals"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Token expired or invalid"
+                    }
+                }
+            }
+        },
+        "/validate/capitals": {
+            "post": {
+                "summary": "Validação do quiz",
+                "description": "Esta é uma rota autenticacada e responsável por validar se o usuário acertou ou não o quiz \n Insira a chave 'ciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJidX' como token",
+                "tags": [
+                    "Capitals"
+                ],
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/validate"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Deve retornar true para resposta correta e false para incorreta"
+                    },
+                    "401": {
+                        "description": "Token não enviado ou expirado"
+                    }
+                }
+            }
+        },
+        "/flags/easy": {
+            "get": {
+                "summary": "obter um quiz de bandeiras na dificuldade fácil",
+                "description": "Esta é uma rota autenticacada e responsável por enviar um quiz de bandeiras na dificuldade fácil para o usuário \n Insira a chave 'ciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJidX' como token",
+                "tags": [
+                    "Flags"
+                ],
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Quiz",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/definitions/quiz-flags"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Token expired or invalid"
+                    }
+                }
+            }
+        },
+        "/flags/medium": {
+            "get": {
+                "summary": "obter um quiz de bandeiras na dificuldade média",
+                "description": "Esta é uma rota autenticacada e responsável por enviar um quiz de bandeiras na dificuldade média para o usuário \n Insira a chave 'ciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJidX' como token",
+                "tags": [
+                    "Flags"
+                ],
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Quiz",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/definitions/quiz-flags"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Token expired or invalid"
+                    }
+                }
+            }
+        },
+        "/flags/hard": {
+            "get": {
+                "summary": "obter um quiz de bandeiras na dificuldade difícil",
+                "description": "Esta é uma rota autenticacada e responsável por enviar um quiz de bandeiras na dificuldade difícil para o usuário \n Insira a chave 'ciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJidX' como token",
+                "tags": [
+                    "Flags"
+                ],
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Quiz",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/definitions/quiz-flags"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Token expired or invalid"
+                    }
+                }
+            }
+        },
+        "/validate/flags": {
+            "post": {
+                "summary": "Validação do quiz",
+                "description": "Esta é uma rota autenticacada e responsável por validar se o usuário acertou ou não o quiz \n Insira a chave 'ciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJidX' como token",
+                "tags": [
+                    "Flags"
+                ],
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/validate"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Deve retornar true para resposta correta e false para incorreta"
+                    },
+                    "401": {
+                        "description": "Token não enviado ou expirado"
+                    }
+                }
+            }
+        },
+        "/territories/easy": {
+            "get": {
+                "summary": "obter um quiz de territorios na dificuldade fácil",
+                "description": "Esta é uma rota autenticacada e responsável por enviar um quiz de territorios na dificuldade fácil para o usuário \n Insira a chave 'ciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJidX' como token",
+                "tags": [
+                    "Territories"
+                ],
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Quiz",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/definitions/quiz-territories"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Token expired or invalid"
+                    }
+                }
+            }
+        },
+        "/territories/medium": {
+            "get": {
+                "summary": "obter um quiz de territorios na dificuldade média",
+                "description": "Esta é uma rota autenticacada e responsável por enviar um quiz de territorios na dificuldade média para o usuário \n Insira a chave 'ciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJidX' como token",
+                "tags": [
+                    "Territories"
+                ],
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Quiz",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/definitions/quiz-territories"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Token expired or invalid"
+                    }
+                }
+            }
+        },
+        "/territories/hard": {
+            "get": {
+                "summary": "obter um quiz de territorios na dificuldade difícil",
+                "description": "Esta é uma rota autenticacada e responsável por enviar um quiz de territorios na dificuldade difícil para o usuário \n Insira a chave 'ciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJidX' como token",
+                "tags": [
+                    "Territories"
+                ],
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Quiz",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/definitions/quiz-territories"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Token expired or invalid"
+                    }
+                }
+            }
+        },
+        "/validate/territories": {
+            "post": {
+                "summary": "Validação do quiz",
+                "description": "Esta é uma rota autenticacada e responsável por validar se o usuário acertou ou não o quiz \n Insira a chave 'ciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJidX' como token",
+                "tags": [
+                    "Territories"
+                ],
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/validate"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Deve retornar true para resposta correta e false para incorreta"
+                    },
+                    "401": {
+                        "description": "Token não enviado ou expirado"
+                    }
+                }
+            }
+        },
+        "/users/ranking": {
+            "get": {
+                "summary": "Ranking de melhores jogadores",
+                "description": "Esta é uma rota autenticacada e responsável por listar os melhores jogadores do dia \n Insira a chave 'ciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJidX' como token",
+                "tags": [
+                    "Ranking"
+                ],
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Deve retornar os dados do usuário autenticado e uma lista de melhores jogadores da semana",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/definitions/ranking"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Token não enviado ou expirado"
+                    }
+                }
+            }
+        }   
+    },
+    "components": {
+        "schemas": {
+            "sign-up": {
+                "type": "object",
+                "properties": {
+                    "name": {
+                        "type": "string"
+                    },
+                    "email": {
+                        "type": "string"
+                    },
+                    "password": {
+                        "type": "string"
+                    },
+                    "confirmPassword": {
+                        "type": "string"
+                    },
+                    "picture": {
+                        "type": "string?",
+                        "required": false
+                    }
+                }
+            },
+            "sign-in": {
+                "type": "object",
+                "properties": {
+                    "email": {
+                        "type": "string"
+                    },
+                    "password": {
+                        "type": "string"
+                    }
+                }
+            },
+            "validate": {
+                "type": "object",
+                "properties": {
+                    "quizId": {
+                        "type": "integer",
+                        "example": 32
+                    },
+                    "answer": {
+                        "type": "string",
+                        "example": "resposta"
+                    }
+                }
+            }
+        },
+        "securitySchemes": {
+            "bearerAuth": {
+                "type": "http",
+                "scheme": "bearer",
+                "bearerFormat": "JWT"
+            }
+        },
+        "definitions": {
+            "quiz-flags": {
+                "type": "array",
+                "example": [
+                    {
+                        "id": 46,
+                        "name": "🇬🇧",
+                        "options": [
+                            "Russia",
+                            "Germany",
+                            "United Kingdom",
+                            "Netherlands",
+                            "Uruguay"
+                        ]
+                    },
+                    {
+                        "id": 28,
+                        "name": "🇷🇸",
+                        "options": [
+                            "France",
+                            "Portugal",
+                            "Russia",
+                            "Argentina",
+                            "Serbia"
+                        ]
+                    },
+                    {
+                        "id": 62,
+                        "name": "🇻🇪",
+                        "options": [
+                            "Switzerland",
+                            "Venezuela",
+                            "Mexico",
+                            "Colombia",
+                            "Ukraine"
+                        ]
+                    },
+                    {
+                        "id": 87,
+                        "name": "🇮🇹",
+                        "options": [
+                            "Italy",
+                            "United States",
+                            "Israel",
+                            "Jamaica",
+                            "Mexico"
+                        ]
+                    },
+                    {
+                        "id": 85,
+                        "name": "🇿🇦",
+                        "options": [
+                            "South Africa",
+                            "Italy",
+                            "United Kingdom",
+                            "Russia",
+                            "Norway"
+                        ]
+                    },
+                    {
+                        "id": 146,
+                        "name": "🇨🇭",
+                        "options": [
+                            "Belgium",
+                            "Switzerland",
+                            "China",
+                            "Turkey",
+                            "Japan"
+                        ]
+                    },
+                    {
+                        "id": 133,
+                        "name": "🇳🇴",
+                        "options": [
+                            "Chile",
+                            "Switzerland",
+                            "Spain",
+                            "Uruguay",
+                            "Norway"
+                        ]
+                    },
+                    {
+                        "id": 206,
+                        "name": "🇹🇷",
+                        "options": [
+                            "Turkey",
+                            "Mexico",
+                            "Egypt",
+                            "United Kingdom",
+                            "Jamaica"
+                        ]
+                    },
+                    {
+                        "id": 121,
+                        "name": "🇲🇽",
+                        "options": [
+                            "Mexico",
+                            "North Korea",
+                            "China",
+                            "Portugal",
+                            "Ecuador"
+                        ]
+                    },
+                    {
+                        "id": 2,
+                        "name": "🇧🇪",
+                        "options": [
+                            "Japan",
+                            "Belgium",
+                            "North Korea",
+                            "Spain",
+                            "Ukraine"
+                        ]
+                    }
+                ]
+            },
+            "quiz-capitals": {
+                "type": "array",
+                "example": [
+                    {
+                        "id": 137,
+                        "name": "South Korea",
+                        "options": [
+                            "Incheon",
+                            "Daejeon",
+                            "Busan",
+                            "Daegu",
+                            "Seoul"
+                        ]
+                    },
+                    {
+                        "id": 33,
+                        "name": "Chile",
+                        "options": [
+                            "Santiago",
+                            "Antofagasta",
+                            "Valparaíso",
+                            "Puente Alto",
+                            "Viña del Mar"
+                        ]
+                    },
+                    {
+                        "id": 34,
+                        "name": "China",
+                        "options": [
+                            "Shanghai",
+                            "Beijing",
+                            "Shenzhen",
+                            "Wuhan",
+                            "Tianjin"
+                        ]
+                    },
+                    {
+                        "id": 76,
+                        "name": "Japan",
+                        "options": [
+                            "Tokyo",
+                            "Yokohama",
+                            "Sapporo",
+                            "Nagoya",
+                            "Osaka"
+                        ]
+                    },
+                    {
+                        "id": 74,
+                        "name": "Italy",
+                        "options": [
+                            "Milan",
+                            "Rome",
+                            "Palermo",
+                            "Naples",
+                            "Turin"
+                        ]
+                    },
+                    {
+                        "id": 156,
+                        "name": "United Kingdom",
+                        "options": [
+                            "Leicester",
+                            "Liverpool",
+                            "Sheffield",
+                            "Bristol",
+                            "London"
+                        ]
+                    },
+                    {
+                        "id": 93,
+                        "name": "Mexico",
+                        "options": [
+                            "Mexico City",
+                            "Ciudad Juárez",
+                            "Guadalajara",
+                            "Tijuana",
+                            "Puebla"
+                        ]
+                    },
+                    {
+                        "id": 44,
+                        "name": "Denmark",
+                        "options": [
+                            "Esbjerg",
+                            "Copenhagen",
+                            "Århus",
+                            "Odense",
+                            "Aalborg"
+                        ]
+                    },
+                    {
+                        "id": 59,
+                        "name": "Greece",
+                        "options": [
+                            "Athens",
+                            "Thessaloníki",
+                            "Lárisa",
+                            "Pátra",
+                            "Piraeus"
+                        ]
+                    },
+                    {
+                        "id": 114,
+                        "name": "Paraguay",
+                        "options": [
+                            "San Lorenzo",
+                            "Capiatá",
+                            "Lambaré",
+                            "Asuncion",
+                            "Ciudad del Este"
+                        ]
+                    }
+                ]
+            },
+            "quiz-territories": {
+                "type": "array",
+                "example": [
+                    {
+                        "id": 5,
+                        "name": "https://www.arealme.com/geography/images/5.png",
+                        "options": [
+                            "Mexico",
+                            "Australia",
+                            "Brazil",
+                            "Argentina",
+                            "United States"
+                        ]
+                    },
+                    {
+                        "id": 29,
+                        "name": "https://www.arealme.com/geography/images/30.png",
+                        "options": [
+                            "Uruguay",
+                            "Peru",
+                            "Colombia",
+                            "Venezuela",
+                            "Ecuador"
+                        ]
+                    },
+                    {
+                        "id": 7,
+                        "name": "https://www.arealme.com/geography/images/7.png",
+                        "options": [
+                            "north Korea",
+                            "Japan",
+                            "South Korea",
+                            "Philippines",
+                            "Taiwan"
+                        ]
+                    },
+                    {
+                        "id": 15,
+                        "name": "https://www.arealme.com/geography/images/16.png",
+                        "options": [
+                            "France",
+                            "Sweden",
+                            "United Kington",
+                            "Switzerland",
+                            "Germany"
+                        ]
+                    },
+                    {
+                        "id": 42,
+                        "name": "https://www.arealme.com/geography/images/45.png",
+                        "options": [
+                            "Netherland",
+                            "France",
+                            "Portugal",
+                            "Germany",
+                            "Spain"
+                        ]
+                    },
+                    {
+                        "id": 3,
+                        "name": "https://www.arealme.com/geography/images/3.png",
+                        "options": [
+                            "Canada",
+                            "Mexico",
+                            "United States",
+                            "Russia",
+                            "Brazil"
+                        ]
+                    },
+                    {
+                        "id": 26,
+                        "name": "https://www.arealme.com/geography/images/27.png",
+                        "options": [
+                            "United Stades",
+                            "greenland",
+                            "Canada",
+                            "Mexico",
+                            "Alaska"
+                        ]
+                    },
+                    {
+                        "id": 14,
+                        "name": "https://www.arealme.com/geography/images/15.png",
+                        "options": [
+                            "Poland",
+                            "United Kingdon",
+                            "Germany",
+                            "France",
+                            "Spain"
+                        ]
+                    },
+                    {
+                        "id": 43,
+                        "name": "https://www.arealme.com/geography/images/47.png",
+                        "options": [
+                            "Colombia",
+                            "Peru",
+                            "Venezuela",
+                            "Uruguay",
+                            "Bolivia"
+                        ]
+                    },
+                    {
+                        "id": 32,
+                        "name": "https://www.arealme.com/geography/images/34.png",
+                        "options": [
+                            "Australia",
+                            "China",
+                            "Philippines",
+                            "new Zealand",
+                            "Indonesia"
+                        ]
+                    }
+                ]
+            },
+            "ranking": {
+                "type": "object",
+                "example": {
+                    "user": {
+                        "picture": "http://neoleader.com.br/wp-content/uploads/2015/05/geral_adulto-300x300.png",
+                        "name": "administrador",
+                        "hits": 1,
+                        "mistakes": 2
+                    },
+                    "weekScore": [
+                        {
+                            "weekScore": "450",
+                            "name": "marquim"
+                        },
+                        {
+                            "weekScore": "100",
+                            "name": "marco jr"
+                        },
+                        {
+                            "weekScore": "10",
+                            "name": "administrador"
+                        }
+                    ]
+                }
+            }
+        }
+    }
+}
